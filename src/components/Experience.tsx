@@ -20,12 +20,13 @@ const Experience = () => {
     {
       title: "Innovation Fellowship Intern",
       company: "Eskwelabs",
-      period: "2024",
+      period: "January – March 2025",
       location: "Philippines",
       type: "Fellowship",
-      description: "Participated in data-driven innovation through collaborative, project-based learning in a startup setting.",
+      description: "Participated in data-driven innovation through collaborative, project-based learning in a startup setting and handled events operation.",
       achievements: [
         "Developed data-driven solutions",
+        "Managed events operations",
         "Collaborated in startup environment",
         "Applied innovation methodologies"
       ]
@@ -33,7 +34,7 @@ const Experience = () => {
     {
       title: "Prompt Engineering Research and Integration Intern",
       company: "Excelerate",
-      period: "2024",
+      period: "July – August 2025",
       location: "International",
       type: "Research",
       description: "Gained practical experience in prompt engineering, research, and integration while collaborating with an international team.",
@@ -45,11 +46,11 @@ const Experience = () => {
     },
     {
       title: "DIWA Scholar, No-Code Study Cohort #1",
-      company: "DIWA Learning Systems",
-      period: "2024",
+      company: "Digital Innovation for Women Advancement (DICT Philippines)",
+      period: "April 2025",
       location: "Philippines",
       type: "Scholarship",
-      description: "Completed foundational training in no-code development and product prototyping.",
+      description: "Completed foundational training in no-code development and product prototyping through the Department of Information and Communications Technology program.",
       achievements: [
         "Mastered no-code development platforms",
         "Built product prototypes",
@@ -59,7 +60,7 @@ const Experience = () => {
     {
       title: "Data Analytics Online Internship",
       company: "Deloitte",
-      period: "2024",
+      period: "2025",
       location: "Online",
       type: "Virtual Internship",
       description: "Gained practical experience in analytics, data visualization, and insights generation.",

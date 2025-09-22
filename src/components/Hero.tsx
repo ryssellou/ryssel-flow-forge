@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import personalPicture from "@/assets/personal-picture.jpeg";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -19,20 +20,33 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center text-white">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="block">Ryssel Lou</span>
-            <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              C. Calaor
-            </span>
-          </h1>
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 text-white">
+          {/* Personal Photo */}
+          <div className="flex-shrink-0">
+            <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+              <img 
+                src={personalPicture} 
+                alt="Ry Calaor - AI Integration & Automation Specialist"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
+          {/* Hero Content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 animate-fade-in">
+              <span className="block">Ryssel Lou</span>
+              <span className="block bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                C. Calaor
+              </span>
+            </h1>
           
           <p className="text-xl sm:text-2xl lg:text-3xl mb-4 text-white/90 font-medium">
             AI Integration & Automation Specialist
           </p>
           
           <p className="text-lg sm:text-xl mb-8 text-white/80 max-w-3xl mx-auto">
-            Computer Science graduate specializing in Intelligent Systems, passionate about using technology to solve real-world problems through automation and AI integration.
+            Computer Science graduate in Intelligent Systems, driven to solve real-world problems by harnessing automation and AI.
           </p>
 
           {/* CTA Buttons */}
@@ -82,13 +96,14 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Scroll Down Indicator */}
-          <button
-            onClick={() => scrollToSection("#about")}
-            className="animate-bounce text-white/80 hover:text-white transition-smooth"
-          >
-            <ArrowDown className="w-8 h-8 mx-auto" />
-          </button>
+            {/* Scroll Down Indicator */}
+            <button
+              onClick={() => scrollToSection("#about")}
+              className="animate-bounce text-white/80 hover:text-white transition-smooth"
+            >
+              <ArrowDown className="w-8 h-8 mx-auto" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

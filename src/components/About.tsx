@@ -43,17 +43,11 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg">
               <p className="text-foreground leading-relaxed">
-                I am Ryssel Lou Cabarga Calaor, a Computer Science graduate specializing in 
-                Intelligent Systems at De La Salle University Dasmariñas. With a track record 
-                of academic excellence and leadership roles, I am deeply passionate about using 
-                technology to solve real-world problems.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                My experiences in leadership roles, both in university organizations and 
-                international involvement, have shaped my collaborative skills and my drive 
-                to make a positive impact through technology. Eager to tackle projects that 
-                push boundaries, I aim to apply my problem-solving abilities to innovate 
-                and drive positive change.
+                I am Ry Calaor, a Computer Science graduate specializing in Intelligent Systems. 
+                My academic journey and hands-on experiences have honed my skills in leveraging 
+                technology for impactful solutions. With a strong foundation in automation and AI, 
+                I thrive on tackling complex challenges and driving innovation through collaborative 
+                and creative problem-solving.
               </p>
             </div>
 
