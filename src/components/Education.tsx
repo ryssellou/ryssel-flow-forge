@@ -1,53 +1,22 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Trophy, Users, Globe, BookOpen } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin, Linkedin, ExternalLink, Calendar } from "lucide-react";
 
 const Education = () => {
-  const educationData = [
+  const education = [
     {
-      degree: "BS Computer Science with Specialization in Intelligent Systems",
+      degree: "BS Computer Science, Intelligent Systems",
       school: "De La Salle University Dasmariñas",
       period: "2021-2025",
-      honor: "Summa Cum Laude",
-      icon: GraduationCap
+      location: "Philippines",
+      achievements: ["Summa Cum Laude"]
     },
     {
-      degree: "Science, Engineering, Technology, & Mathematics (STEM)",
-      school: "De La Salle University Dasmariñas Senior High School",
+      degree: "Senior High School, STEM",
+      school: "De La Salle University Dasmariñas",
       period: "2018-2021",
-      honor: "With High Distinction",
-      icon: BookOpen
-    }
-  ];
-
-  const achievements = [
-    {
-      icon: Trophy,
-      title: "Academic Excellence",
-      items: [
-        "Consistent Dean's Lister – Recognized every semester",
-        "Top 10 Thesis Paper – Ranked among top undergraduate theses",
-        "Co-Creator of 'EaTanong HeartWise' – Heart health companion app"
-      ]
-    },
-    {
-      icon: Users,
-      title: "Leadership Roles",
-      items: [
-        "Senior Sister & VP for Special Projects – Youth for Christ DLSU-D",
-        "Associate Executive Director – Youth for Christ DLSU-D",
-        "Secretary General – Youth for Christ DLSU-D",
-        "CSCS College Head – University Student Election Commission"
-      ]
-    },
-    {
-      icon: Globe,
-      title: "Global Exposure",
-      items: [
-        "X-Culture Global Collaboration Participant",
-        "2020 AIB US Southeast Annual Conference Attendee",
-        "International Conference on Research, Inclusivity, and Sustainability (InCRIS 2025) – Presenter"
-      ]
+      location: "Philippines", 
+      achievements: ["With High Distinction"]
     }
   ];
 
@@ -55,65 +24,43 @@ const Education = () => {
     <section id="education" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-4">
             Education
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Academic excellence and continuous learning in Computer Science and Intelligent Systems
-          </p>
         </div>
 
-        {/* Education Cards */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {educationData.map((edu, index) => (
-            <Card key={index} className="p-6 bg-gradient-card border-0 shadow-md hover:shadow-lg transition-smooth">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                  <edu.icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="space-y-3 flex-1">
-                  <h3 className="text-lg font-semibold text-foreground">
+        <div className="max-w-3xl mx-auto space-y-8">
+          {education.map((edu, index) => (
+            <div key={index} className="border-b border-border pb-6 last:border-b-0 hover:bg-muted/20 transition-smooth p-4 rounded-lg click-effect">
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="md:col-span-2">
+                  <h3 className="text-lg font-medium text-foreground mb-1">
                     {edu.degree}
                   </h3>
-                  <p className="text-secondary font-medium">
+                  <p className="text-muted-foreground font-medium mb-2">
                     {edu.school}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">{edu.period}</Badge>
-                    <Badge variant="secondary" className="bg-success text-white">
-                      {edu.honor}
-                    </Badge>
+                    {edu.achievements.map((achievement, idx) => (
+                      <span key={idx} className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded">
+                        {achievement}
+                      </span>
+                    ))}
                   </div>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        {/* Achievements */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {achievements.map((achievement, index) => (
-            <Card key={index} className="p-6 bg-section-bg border-0 shadow-md hover:shadow-lg transition-smooth">
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                    <achievement.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {achievement.title}
-                  </h3>
                 </div>
                 
-                <ul className="space-y-3">
-                  {achievement.items.map((item, idx) => (
-                    <li key={idx} className="text-sm text-muted-foreground flex items-start">
-                      <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {edu.period}
+                  </div>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    {edu.location}
+                  </div>
+                </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>

@@ -27,50 +27,37 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-section-bg">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-6">
             About Me
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A passionate technologist with a drive to innovate and make a positive impact
-          </p>
+          <div className="prose prose-lg max-w-3xl mx-auto">
+            <p className="text-lg text-foreground leading-relaxed mb-8">
+              Hi! I'm Ry, an AI Automation Specialist. I help businesses stop wasting hours on repetitive tasks by building AI-powered automation systems. That way, they can cut costs, save time, and focus on growth instead of busywork.
+            </p>
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Profile Content */}
-          <div className="space-y-6">
-            <div className="prose prose-lg">
-              <p className="text-foreground leading-relaxed">
-                I am Ry Calaor, a Computer Science graduate specializing in Intelligent Systems. 
-                My academic journey and hands-on experiences have honed my skills in leveraging 
-                technology for impactful solutions. With a strong foundation in automation and AI, 
-                I thrive on tackling complex challenges and driving innovation through collaborative 
-                and creative problem-solving.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary" className="text-sm">Cavite, Philippines</Badge>
-              <Badge variant="outline" className="text-sm">Computer Science</Badge>
-              <Badge variant="outline" className="text-sm">Intelligent Systems</Badge>
+        {/* Content Sections */}
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Leadership and Global Exposure */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-medium text-foreground mb-4">Leadership and Global Exposure</h3>
+            <div className="space-y-3 text-muted-foreground">
+              <p className="leading-relaxed">Led multiple NGO and school organizations.</p>
+              <p className="leading-relaxed">Participated in international collaborations.</p>
             </div>
           </div>
 
-          {/* Highlights Grid */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {highlights.map((highlight, index) => (
-              <Card key={index} className="p-6 bg-gradient-card border-0 shadow-md hover:shadow-lg transition-smooth">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
-                    <highlight.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-foreground">{highlight.title}</h3>
-                  <p className="text-sm text-muted-foreground">{highlight.description}</p>
-                </div>
-              </Card>
-            ))}
+          {/* Competitions and Hackathons */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-medium text-foreground mb-4">Competitions and Hackathons</h3>
+            <div className="space-y-3 text-muted-foreground">
+              <p className="leading-relaxed">Top 10 thesis paper.</p>
+              <p className="leading-relaxed">Multiple hackathon achievements.</p>
+            </div>
           </div>
         </div>
       </div>

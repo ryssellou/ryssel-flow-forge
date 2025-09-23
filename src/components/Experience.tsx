@@ -23,7 +23,7 @@ const Experience = () => {
       period: "January – March 2025",
       location: "Philippines",
       type: "Fellowship",
-      description: "Participated in data-driven innovation through collaborative, project-based learning in a startup setting and handled events operation.",
+      description: "Participated in data-driven innovation through collaborative, project-based learning in a startup setting and handled events operations.",
       achievements: [
         "Developed data-driven solutions",
         "Managed events operations",
@@ -91,38 +91,24 @@ const Experience = () => {
           </p>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="space-y-8 mb-16">
+        {/* Experience Grid */}
+        <div className="space-y-6 mb-16">
           {experiences.map((exp, index) => (
-            <Card key={index} className="p-6 bg-gradient-card border-0 shadow-md hover:shadow-lg transition-smooth">
-              <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-6">
-                <div className="lg:w-2/3 space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-foreground">
-                      {exp.title}
-                    </h3>
-                    <p className="text-lg text-secondary font-medium">
-                      {exp.company}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {exp.description}
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-foreground">Key Achievements:</h4>
-                    <ul className="space-y-1">
-                      {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="text-sm text-muted-foreground flex items-start">
-                          <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            <div key={index} className="border-b border-border pb-6 last:border-b-0 hover:bg-muted/20 transition-smooth p-4 rounded-lg click-effect">
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="md:col-span-2">
+                  <h3 className="text-lg font-medium text-foreground mb-1">
+                    {exp.title}
+                  </h3>
+                  <p className="text-muted-foreground font-medium mb-2">
+                    {exp.company}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {exp.description}
+                  </p>
                 </div>
                 
-                <div className="lg:w-1/3 space-y-3 mt-4 lg:mt-0">
+                <div className="space-y-2">
                   <div className="flex items-center text-sm text-muted-foreground">
                     <Calendar className="w-4 h-4 mr-2" />
                     {exp.period}
@@ -131,12 +117,15 @@ const Experience = () => {
                     <MapPin className="w-4 h-4 mr-2" />
                     {exp.location}
                   </div>
-                  <Badge variant="outline" className="w-fit">
+                </div>
+                
+                <div className="flex justify-end">
+                  <span className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded">
                     {exp.type}
-                  </Badge>
+                  </span>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 

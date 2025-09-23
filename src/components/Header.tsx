@@ -20,8 +20,8 @@ const Header = () => {
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Experience", href: "#experience" },
+    { name: "Portfolio", href: "#portfolio" },
     { name: "Education", href: "#education" },
-    { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -45,11 +45,9 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img 
-              src={logo} 
-              alt="Ry Calaor Logo" 
-              className="h-8 w-auto"
-            />
+            <span className="text-xl font-bold text-foreground">
+              Ryssel Calaor
+            </span>
           </div>
 
           {/* Desktop Navigation */}
