@@ -30,7 +30,7 @@ const About = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-light text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             About Me
           </h2>
           <div className="prose prose-lg max-w-3xl mx-auto">
@@ -40,24 +40,31 @@ const About = () => {
           </div>
         </div>
 
-        {/* Content Sections */}
-        <div className="grid md:grid-cols-2 gap-12">
+        {/* Highlights Container */}
+        <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+          {/* Academic Excellence */}
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold text-foreground">Academic Excellence</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Summa Cum Laude graduate with consistent Dean's List recognition.
+            </p>
+          </div>
+
           {/* Leadership and Global Exposure */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-medium text-foreground mb-4">Leadership and Global Exposure</h3>
-            <div className="space-y-3 text-muted-foreground">
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold text-foreground">Leadership and Global Exposure</h3>
+            <div className="space-y-1 text-muted-foreground">
               <p className="leading-relaxed">Led multiple NGO and school organizations.</p>
               <p className="leading-relaxed">Participated in international collaborations.</p>
             </div>
           </div>
 
-          {/* Competitions and Hackathons */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-medium text-foreground mb-4">Competitions and Hackathons</h3>
-            <div className="space-y-3 text-muted-foreground">
-              <p className="leading-relaxed">Top 10 thesis paper.</p>
-              <p className="leading-relaxed">Multiple hackathon achievements.</p>
-            </div>
+          {/* Problem Solver */}
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold text-foreground">Problem Solver</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Passionate about using technology to drive positive change.
+            </p>
           </div>
         </div>
       </div>

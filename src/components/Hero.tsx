@@ -11,35 +11,32 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-background relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-16 text-center lg:text-left">
-          {/* Personal Photo */}
-          <div className="flex-shrink-0">
-            <div className="w-64 h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-xl bg-gradient-to-br from-muted to-background p-1">
-              <div className="w-full h-full rounded-full overflow-hidden">
-                <img 
-                  src={personalPicture} 
-                  alt="Ryssel Calaor - AI Automation Specialist"
-                  className="w-full h-full object-cover grayscale-[20%] contrast-110"
-                />
-              </div>
-            </div>
-          </div>
-          
-          {/* Hero Content */}
-          <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 text-foreground tracking-tight">
-              <span className="block font-normal">Ryssel</span>
-              <span className="block font-bold">Calaor</span>
+    <section className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <img 
+          src={personalPicture} 
+          alt="Ryssel Calaor - AI Automation Specialist"
+          className="w-full h-full object-cover opacity-10 dark:opacity-5"
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center">
+          {/* Greeting */}
+          <div className="mb-8">
+            <p className="text-xl text-muted-foreground mb-2">Hello!</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight">
+              I'm <span className="font-bold text-primary">Ryssel Calaor</span>
             </h1>
+          </div>
           
             <p className="text-xl sm:text-2xl mb-8 text-muted-foreground font-light">
               AI Automation Specialist
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button
                 size="lg"
                 onClick={() => scrollToSection("#contact")}
@@ -60,7 +57,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 mb-12">
+            <div className="flex justify-center space-x-6 mb-12">
               <a
                 href="https://www.linkedin.com/in/ryssel-calaor"
                 target="_blank"
@@ -92,7 +89,6 @@ const Hero = () => {
             >
               <ArrowDown className="w-6 h-6 mx-auto" />
             </button>
-          </div>
         </div>
       </div>
     </section>
