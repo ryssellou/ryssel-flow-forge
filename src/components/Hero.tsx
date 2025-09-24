@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
-import personalPicture from "@/assets/ryssel-profile.png";
+import personalPicture from "@/assets/ryssel-new-profile.png";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -20,7 +20,10 @@ const Hero = () => {
             <div className="mb-8">
               <p className="text-2xl text-muted-foreground mb-4 font-light">Hello!</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight mb-4">
-                I'm <span className="font-bold text-primary bg-gradient-to-r from-primary to-primary-variant bg-clip-text text-transparent animate-pulse">Ryssel Calaor</span>
+                I'm <span className="font-bold bg-gradient-to-r from-primary via-primary-variant to-primary bg-clip-text text-transparent animate-pulse shadow-lg" style={{
+                  textShadow: '0 0 20px hsl(var(--primary) / 0.5)',
+                  WebkitTextStroke: '1px hsl(var(--primary) / 0.3)'
+                }}>Ryssel Calaor</span>
               </h1>
               
               <p className="text-2xl sm:text-3xl mb-8 text-foreground font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">

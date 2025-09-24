@@ -44,7 +44,10 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Ryssel Calaor Logo" 
-              className="h-8 w-auto hover:scale-105 transition-transform duration-300 hover:drop-shadow-lg animate-pulse"
+              className="h-12 w-auto hover:scale-110 transition-all duration-500 hover:drop-shadow-2xl animate-pulse hover:brightness-110 hover:contrast-125 hover:shadow-lg hover:shadow-primary/30 transform hover:-translate-y-1"
+              style={{
+                filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.3))',
+              }}
             />
           </div>
 
