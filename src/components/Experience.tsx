@@ -128,29 +128,6 @@ const Experience = () => {
             </div>
           ))}
         </div>
-
-        {/* Competitions & Hackathons */}
-        <div className="space-y-8">
-          <h3 className="text-2xl font-bold text-foreground text-center">
-            Competitions & Hackathons
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {competitions.map((comp, index) => (
-              <Card key={index} className="p-4 bg-gradient-card border-0 shadow-md hover:shadow-lg transition-smooth">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <Award className="w-5 h-5 text-secondary" />
-                    <span className="font-medium text-foreground">{comp.name}</span>
-                  </div>
-                  <Badge variant="secondary" className="font-semibold">
-                    {comp.result}
-                  </Badge>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

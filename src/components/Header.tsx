@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
-import logo from "@/assets/logo-new.png";
+import logo from "@/assets/ry-calaor-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,7 +44,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Ryssel Calaor Logo" 
-              className="h-8 w-auto"
+              className="h-8 w-auto hover:scale-105 transition-transform duration-300 hover:drop-shadow-lg animate-pulse"
             />
           </div>
 

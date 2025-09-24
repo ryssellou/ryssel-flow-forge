@@ -11,13 +11,13 @@ const About = () => {
     },
     {
       icon: Users,
-      title: "Leadership Experience",
-      description: "Led multiple organizations and international collaborations"
+      title: "Leadership and Global Exposure",
+      description: "Experienced handling NGO and school organizations. Participated in international collaborations."
     },
     {
       icon: Lightbulb,
-      title: "Innovation Focus",
-      description: "Top 10 thesis paper and multiple hackathon achievements"
+      title: "Competitions and Hackathons",
+      description: "Top 10 thesis paper. Multiple hackathon achievements."
     },
     {
       icon: Target,
@@ -28,7 +28,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             About Me
@@ -40,32 +40,22 @@ const About = () => {
           </div>
         </div>
 
-        {/* Highlights Container */}
-        <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-          {/* Academic Excellence */}
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-foreground">Academic Excellence</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Summa Cum Laude graduate with consistent Dean's List recognition.
-            </p>
-          </div>
-
-          {/* Leadership and Global Exposure */}
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-foreground">Leadership and Global Exposure</h3>
-            <div className="space-y-1 text-muted-foreground">
-              <p className="leading-relaxed">Led multiple NGO and school organizations.</p>
-              <p className="leading-relaxed">Participated in international collaborations.</p>
-            </div>
-          </div>
-
-          {/* Problem Solver */}
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold text-foreground">Problem Solver</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Passionate about using technology to drive positive change.
-            </p>
-          </div>
+        {/* Highlights Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {highlights.map((highlight, index) => {
+            const IconComponent = highlight.icon;
+            return (
+              <Card key={index} className="p-8 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 border border-border bg-card/50 backdrop-blur-sm">
+                <div className="mb-6 flex justify-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                    <IconComponent className="w-8 h-8 text-primary" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">{highlight.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{highlight.description}</p>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
