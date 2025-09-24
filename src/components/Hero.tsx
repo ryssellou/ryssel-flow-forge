@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from "lucide-react";
-import personalPicture from "@/assets/ryssel-profile.png";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -91,7 +90,7 @@ const Hero = () => {
           <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative">
               <img 
-                src={personalPicture} 
+                src="/lovable-uploads/712eb407-4ba5-432a-ac3d-0b7e245b3684.png" 
                 alt="Ryssel Calaor - AI Automation Specialist"
                 className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500 animate-fade-in"
               />
