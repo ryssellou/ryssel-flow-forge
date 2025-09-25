@@ -42,7 +42,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <img 
-              src="/logo-for-portfolio.png" 
+              src="/favicon-portfolio.png" 
               alt="Ry Calaor Logo" 
               className="h-16 w-auto"
             />

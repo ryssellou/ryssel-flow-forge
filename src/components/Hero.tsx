@@ -19,9 +19,9 @@ const Hero = () => {
               <img 
                 src="/profile-pic-ryssel-calaor.png" 
                 alt="Ryssel Calaor - AI Automation Specialist"
-                className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl"
               />
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary-variant/20 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+              <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-xl opacity-50 animate-pulse"></div>
             </div>
           </div>
 
@@ -31,10 +31,10 @@ const Hero = () => {
             <div className="mb-8">
               <p className="text-2xl text-muted-foreground mb-4 font-light">Hello!</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-foreground tracking-tight mb-4">
-                I'm <span className="font-bold bg-gradient-to-r from-primary to-primary-variant bg-clip-text text-transparent">Ryssel Calaor</span>
+                I'm <span className="font-bold text-foreground relative inline-block animate-shimmer bg-[length:200%_100%] bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">Ryssel Calaor</span>
               </h1>
               
-              <p className="text-xl sm:text-2xl mb-8 text-foreground font-semibold">
+              <p className="text-xl sm:text-2xl mb-8 text-foreground font-semibold relative inline-block animate-pulse">
                 AI Automation Specialist
               </p>
             </div>
