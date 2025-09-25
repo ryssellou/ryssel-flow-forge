@@ -31,10 +31,10 @@ const Hero = () => {
             <div className="mb-8">
               <p className="text-2xl text-muted-foreground mb-4 font-light">Hello!</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-foreground tracking-tight mb-4">
-                I'm <span className="font-bold text-foreground relative inline-block animate-shimmer bg-[length:200%_100%] bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">Ryssel Calaor</span>
+                I'm <span className="font-bold text-foreground relative inline-block animate-pulse">Ryssel Calaor</span>
               </h1>
               
-              <p className="text-xl sm:text-2xl mb-8 text-foreground font-semibold relative inline-block animate-pulse">
+              <p className="text-xl sm:text-2xl mb-8 text-foreground font-semibold relative inline-block">
                 AI Automation Specialist
               </p>
             </div>
