@@ -19,7 +19,7 @@ const Hero = () => {
               <img 
                 src="/profile-pic-ryssel-calaor.png" 
                 alt="Ryssel Calaor - AI Automation Specialist"
-                className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl"
+                className="w-[416px] h-[416px] lg:w-[500px] lg:h-[500px] object-cover rounded-2xl shadow-2xl"
               />
               <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-xl opacity-50 animate-pulse"></div>
             </div>

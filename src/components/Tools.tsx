@@ -4,18 +4,18 @@ const Tools = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const tools = [
-    { name: "Zapier", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zapier/zapier-original.svg" },
-    { name: "Make", logo: "https://www.make.com/en/help/app/make" },
-    { name: "n8n", logo: "https://docs.n8n.io/favicon.png" },
-    { name: "Google Apps Script", logo: "https://developers.google.com/apps-script/images/gs-logo.svg" },
-    { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
-    { name: "SQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
-    { name: "API Integration", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" },
-    { name: "Webhooks", logo: "https://webhooks.dev/assets/icons/webhooks-logo.svg" },
-    { name: "REST APIs", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" },
-    { name: "Google Sheets", logo: "https://developers.google.com/sheets/api/images/sheets-icon.svg" },
-    { name: "Excel", logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" },
-    { name: "Notion", logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
+    { name: "Zapier", logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg" },
+    { name: "Make", logo: "https://cdn.worldvectorlogo.com/logos/make-formerly-integromat.svg" },
+    { name: "n8n", logo: "https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.svg" },
+    { name: "Google Apps Script", logo: "https://www.gstatic.com/images/branding/productlogos/apps_script/v7/192px.svg" },
+    { name: "JavaScript", logo: "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" },
+    { name: "SQL", logo: "https://cdn.worldvectorlogo.com/logos/mysql-logo.svg" },
+    { name: "API Integration", logo: "https://cdn.worldvectorlogo.com/logos/postman.svg" },
+    { name: "Webhooks", logo: "https://cdn.worldvectorlogo.com/logos/webhook.svg" },
+    { name: "REST APIs", logo: "https://cdn.worldvectorlogo.com/logos/swagger.svg" },
+    { name: "Google Sheets", logo: "https://cdn.worldvectorlogo.com/logos/google-sheets.svg" },
+    { name: "Excel", logo: "https://cdn.worldvectorlogo.com/logos/microsoft-excel-2013.svg" },
+    { name: "Notion", logo: "https://cdn.worldvectorlogo.com/logos/notion-logo-1.svg" },
   ];
 
   useEffect(() => {
