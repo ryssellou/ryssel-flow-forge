@@ -12,20 +12,29 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+          {/* Profile Picture */}
+          <div className="flex-shrink-0 order-1 lg:order-2">
+            <div className="relative">
+              <img 
+                src="/profile-pic-ryssel-calaor.png" 
+                alt="Ryssel Calaor - AI Automation Specialist"
+                className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary-variant/20 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+            </div>
+          </div>
+
           {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-center lg:text-left order-2 lg:order-1 max-w-lg">
             {/* Greeting */}
             <div className="mb-8">
               <p className="text-2xl text-muted-foreground mb-4 font-light">Hello!</p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-foreground tracking-tight mb-4">
-                I'm <span className="font-bold bg-gradient-to-r from-primary via-primary-variant to-primary bg-clip-text text-transparent animate-pulse shadow-lg" style={{
-                  textShadow: '0 0 20px hsl(var(--primary) / 0.5)',
-                  WebkitTextStroke: '1px hsl(var(--primary) / 0.3)'
-                }}>Ryssel Calaor</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-foreground tracking-tight mb-4">
+                I'm <span className="font-bold bg-gradient-to-r from-primary to-primary-variant bg-clip-text text-transparent">Ryssel Calaor</span>
               </h1>
               
-              <p className="text-2xl sm:text-3xl mb-8 text-foreground font-bold bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+              <p className="text-xl sm:text-2xl mb-8 text-foreground font-semibold">
                 AI Automation Specialist
               </p>
             </div>
@@ -86,17 +95,6 @@ const Hero = () => {
             </button>
           </div>
 
-          {/* Profile Picture */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/712eb407-4ba5-432a-ac3d-0b7e245b3684.png" 
-                alt="Ryssel Calaor - AI Automation Specialist"
-                className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500 animate-fade-in"
-              />
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary-variant/20 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

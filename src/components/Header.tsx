@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
-import logo from "@/assets/ry-calaor-logo.png";
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,12 +42,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <img 
-              src={logo} 
-              alt="Ryssel Calaor Logo" 
-              className="h-12 w-auto hover:scale-110 transition-all duration-500 hover:drop-shadow-2xl animate-pulse hover:brightness-110 hover:contrast-125 hover:shadow-lg hover:shadow-primary/30 transform hover:-translate-y-1"
-              style={{
-                filter: 'drop-shadow(0 0 8px hsl(var(--primary) / 0.3))',
-              }}
+              src="/logo-for-portfolio.png" 
+              alt="Ry Calaor Logo" 
+              className="h-16 w-auto"
             />
           </div>
 
