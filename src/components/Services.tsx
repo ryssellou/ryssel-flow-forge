@@ -79,9 +79,6 @@ const Services = () => {
                   ))}
                 </ul>
                 
-                <Button variant="portfolio" className="w-full mt-6">
-                  Learn More
-                </Button>
               </div>
             </Card>
           ))}
