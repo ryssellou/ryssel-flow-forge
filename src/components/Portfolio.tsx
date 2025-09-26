@@ -6,25 +6,29 @@ const Portfolio = () => {
     {
       title: "n8n Projects",
       description: "Advanced workflow automation solutions built with n8n for complex business processes.",
-      icon: "🔄",
+      logo: "https://docs.n8n.io/assets/images/n8n-logo-bw-1ef9160ee7c3f5a6cc1de57dc2dd8bb1.svg",
+      technologies: ["n8n", "API Integration", "Webhooks"],
       url: "https://www.canva.com/design/DAGz_oIacGc/H19TO77n-zH3_nXcNCVV4Q/view?utm_content=DAGz_oIacGc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha4a12c76bb"
     },
     {
       title: "Make Projects", 
       description: "Sophisticated automation scenarios using Make platform for seamless integrations.",
-      icon: "⚙️",
+      logo: "https://www.make.com/en/help/image/uuid-a2518a62-3e93-7faa-fe7e-c0b5f8096c89.svg",
+      technologies: ["Make", "API Integration", "REST API"],
       url: "https://www.canva.com/design/DAGz_4o63vU/cE-RXFm0vITOFUnseM1--g/view?utm_content=DAGz_4o63vU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1e334e6b61"
     },
     {
       title: "AI/ML Projects",
       description: "Intelligent solutions leveraging artificial intelligence and machine learning capabilities.",
-      icon: "🧠",
+      logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg",
+      technologies: ["OpenAI", "Python", "Gemini"],
       url: "https://www.canva.com/design/DAG0CaIiPbk/i6_AS5Xv7jx2sl2dDbIBWw/view?utm_content=DAG0CaIiPbk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he242f2907a"
     },
     {
       title: "Zapier Projects",
       description: "Streamlined workflow automation connecting your favorite apps and services.",
-      icon: "⚡",
+      logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg",
+      technologies: ["Zapier", "Webhooks", "API Integration"],
       url: "https://www.canva.com/design/DAGz_iwLeNE/Zi5W8QLPhfjc8O2HTjoGOA/view?utm_content=DAGz_iwLeNE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4839ac1124"
     }
   ];
@@ -54,7 +58,19 @@ const Portfolio = () => {
             >
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="text-4xl">{category.icon}</div>
+                  <div className="w-12 h-12 bg-muted/50 rounded-lg flex items-center justify-center">
+                    <img 
+                      src={category.logo} 
+                      alt={`${category.title} logo`}
+                      className="w-8 h-8 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      onError={(e) => {
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          parent.innerHTML = `<span class="text-xs font-bold text-foreground">${category.title.split(' ')[0]}</span>`;
+                        }
+                      }}
+                    />
+                  </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-smooth">
                       {category.title}
@@ -66,6 +82,17 @@ const Portfolio = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {category.description}
                 </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {category.technologies.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex}
+                      className="px-3 py-1 text-xs bg-muted/50 text-muted-foreground rounded-full font-medium border border-border/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
                 
                 <div className="pt-4 border-t border-border/50">
                   <span className="text-sm text-primary font-medium group-hover:underline">
