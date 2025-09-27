@@ -5,7 +5,7 @@ import { Calendar, MapPin, Award } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Fullstack WordPress Developer Intern",
+      title: "Fullstack Developer Intern (WordPress & Laravel)",
       company: "ROC.PH Digital Marketing Services",
       period: "June – August 2024",
       location: "Philippines",

@@ -29,7 +29,14 @@ const Portfolio = () => {
       description: "Streamlined workflow automation connecting your favorite apps and services.",
       logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg",
       technologies: ["Zapier", "Webhooks", "API Integration"],
-      url: "https://www.canva.com/design/DAGz_iwLeNE/Zi5W8QLPhfjc8O2HTjoGOA/view?utm_content=DAGz_iwLeNE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4839ac1124"
+      url: "https://www.canva.com/design/DAGz_iwLeNE/Zi5W8QLPhfjc8O2HTjoGOA/view?utm_content=DAGz_iwLeNE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4839ac1124"  
+    },
+    {
+      title: "GHL Projects",
+      description: "Comprehensive business automation solutions using GoHighLevel platform.",
+      logo: "https://assets.gohighlevel.com/images/GHL-Logo-White.svg",
+      technologies: ["GoHighLevel", "CRM", "Marketing Automation"],
+      url: "https://www.canva.com/design/DAG0ESwYuPI/X-97cLtiHcdAOjYvuVXzgQ/view?utm_content=DAG0ESwYuPI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h667425454a"
     }
   ];
 
