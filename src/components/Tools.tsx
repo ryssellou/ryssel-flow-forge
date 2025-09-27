@@ -1,28 +1,39 @@
+import n8nLogo from "@/assets/n8n-logo.png";
+import makeLogo from "@/assets/make-logo.svg";
+import goHighLevelLogo from "@/assets/gohighlevel-logo.png";
+import mondayLogo from "@/assets/monday-logo.png";
+import hubspotLogo from "@/assets/hubspot-logo.png";
+import notionLogo from "@/assets/notion-logo.png";
+import javascriptLogo from "@/assets/javascript-logo.webp";
+import htmlLogo from "@/assets/html-logo.webp";
+import openaiLogo from "@/assets/openai-logo.webp";
+import geminiLogo from "@/assets/gemini-logo.png";
+
 const Tools = () => {
   const tools = [
-    { name: "n8n", logo: "https://docs.n8n.io/assets/images/n8n-logo-bw-1ef9160ee7c3f5a6cc1de57dc2dd8bb1.svg" },
-    { name: "Zapier", logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg" },
-    { name: "Make", logo: "https://cdn.worldvectorlogo.com/logos/make.svg" },
-    { name: "Vapi", logo: "https://docs.vapi.ai/img/logo-dark.svg" },
-    { name: "GoHighLevel", logo: "https://cdn.worldvectorlogo.com/logos/gohighlevel.svg" },
-    { name: "Asana", logo: "https://cdn.worldvectorlogo.com/logos/asana-logo.svg" },
-    { name: "Monday.com", logo: "https://cdn.worldvectorlogo.com/logos/monday-logo.svg" },
-    { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot.svg" },
-    { name: "Supabase", logo: "https://cdn.worldvectorlogo.com/logos/supabase-icon.svg" },
-    { name: "Airtable", logo: "https://cdn.worldvectorlogo.com/logos/airtable.svg" },
-    { name: "Notion", logo: "https://cdn.worldvectorlogo.com/logos/notion-logo-1.svg" },
-    { name: "SQL", logo: "https://cdn.worldvectorlogo.com/logos/mysql-logo.svg" },
-    { name: "Tableau", logo: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg" },
-    { name: "Python", logo: "https://cdn.worldvectorlogo.com/logos/python-5.svg" },
-    { name: "JavaScript", logo: "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" },
-    { name: "HTML", logo: "https://cdn.worldvectorlogo.com/logos/html-1.svg" },
-    { name: "CSS", logo: "https://cdn.worldvectorlogo.com/logos/css-3.svg" },
-    { name: "OpenAI", logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg" },
-    { name: "Gemini", logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
-    { name: "API Integration", logo: "https://cdn.worldvectorlogo.com/logos/postman.svg" },
-    { name: "Webhooks", logo: "https://cdn.worldvectorlogo.com/logos/webhook.svg" },
-    { name: "REST API", logo: "https://cdn.worldvectorlogo.com/logos/swagger.svg" },
-    { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" },
+    { name: "n8n", logo: n8nLogo, isLocal: true },
+    { name: "Zapier", logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg", isLocal: false },
+    { name: "Make", logo: makeLogo, isLocal: true },
+    { name: "Vapi", logo: "https://docs.vapi.ai/img/logo-dark.svg", isLocal: false },
+    { name: "GoHighLevel", logo: goHighLevelLogo, isLocal: true },
+    { name: "Asana", logo: "https://cdn.worldvectorlogo.com/logos/asana-logo.svg", isLocal: false },
+    { name: "Monday.com", logo: mondayLogo, isLocal: true },
+    { name: "HubSpot", logo: hubspotLogo, isLocal: true },
+    { name: "Supabase", logo: "https://cdn.worldvectorlogo.com/logos/supabase-icon.svg", isLocal: false },
+    { name: "Airtable", logo: "https://cdn.worldvectorlogo.com/logos/airtable.svg", isLocal: false },
+    { name: "Notion", logo: notionLogo, isLocal: true },
+    { name: "SQL", logo: "https://cdn.worldvectorlogo.com/logos/mysql-logo.svg", isLocal: false },
+    { name: "Tableau", logo: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg", isLocal: false },
+    { name: "Python", logo: "https://cdn.worldvectorlogo.com/logos/python-5.svg", isLocal: false },
+    { name: "JavaScript", logo: javascriptLogo, isLocal: true },
+    { name: "HTML", logo: htmlLogo, isLocal: true },
+    { name: "CSS", logo: "https://cdn.worldvectorlogo.com/logos/css-3.svg", isLocal: false },
+    { name: "OpenAI", logo: openaiLogo, isLocal: true },
+    { name: "Gemini", logo: geminiLogo, isLocal: true },
+    { name: "API Integration", logo: "https://cdn.worldvectorlogo.com/logos/postman.svg", isLocal: false },
+    { name: "Webhooks", logo: "https://cdn.worldvectorlogo.com/logos/webhook.svg", isLocal: false },
+    { name: "REST API", logo: "https://cdn.worldvectorlogo.com/logos/swagger.svg", isLocal: false },
+    { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg", isLocal: false },
   ];
 
   return (
@@ -47,7 +58,7 @@ const Tools = () => {
               >
                 <div className="w-12 h-12 flex items-center justify-center mb-2">
                   <img 
-                    src={tool.logo} 
+                    src={tool.isLocal ? tool.logo : tool.logo} 
                     alt={`${tool.name} logo`}
                     className="w-full h-full object-contain transition-all duration-500 group-hover:scale-110"
                     onError={(e) => {

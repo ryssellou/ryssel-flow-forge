@@ -69,7 +69,7 @@ const Portfolio = () => {
                     <img 
                       src={category.logo} 
                       alt={`${category.title} logo`}
-                      className="w-8 h-8 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className={`w-8 h-8 object-contain transition-all duration-300 ${category.title === "Zapier Projects" ? "filter-none" : "filter grayscale group-hover:grayscale-0"}`}
                       onError={(e) => {
                         const parent = e.currentTarget.parentElement;
                         if (parent) {
