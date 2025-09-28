@@ -8,14 +8,18 @@ import javascriptLogo from "@/assets/javascript-logo.webp";
 import htmlLogo from "@/assets/html-logo.webp";
 import openaiLogo from "@/assets/openai-logo.webp";
 import geminiLogo from "@/assets/gemini-logo.png";
-import restApiLogo from "@/assets/rest-api-logo.webp";
+import restApiLogo from "@/assets/rest-api-logo-new.png";
 import slackLogo from "@/assets/slack-logo.png";
 import sqlLogo from "@/assets/sql-logo.png";
 import supabaseLogo from "@/assets/supabase-logo.webp";
 import pythonLogo from "@/assets/python-logo.png";
-import webhooksLogo from "@/assets/webhooks-logo.png";
+import webhooksLogo from "@/assets/webhooks-logo-new.png";
 import zapierLogo from "@/assets/zapier-logo.png";
 import vapiLogo from "@/assets/vapi-logo.avif";
+import airtableLogo from "@/assets/airtable-logo.png";
+import apiIntegrationLogo from "@/assets/api-integration-logo.jpg";
+import geminiLogoNew from "@/assets/gemini-logo-new.png";
+import openaiLogoNew from "@/assets/openai-logo-new.webp";
 
 const Tools = () => {
   const tools = [
@@ -28,7 +32,7 @@ const Tools = () => {
     { name: "Monday.com", logo: mondayLogo, isLocal: true },
     { name: "HubSpot", logo: hubspotLogo, isLocal: true },
     { name: "Supabase", logo: supabaseLogo, isLocal: true },
-    { name: "Airtable", logo: "https://cdn.worldvectorlogo.com/logos/airtable.svg", isLocal: false },
+    { name: "Airtable", logo: airtableLogo, isLocal: true },
     { name: "Notion", logo: notionLogo, isLocal: true },
     { name: "SQL", logo: sqlLogo, isLocal: true },
     { name: "Tableau", logo: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg", isLocal: false },
@@ -36,9 +40,9 @@ const Tools = () => {
     { name: "JavaScript", logo: javascriptLogo, isLocal: true },
     { name: "HTML", logo: htmlLogo, isLocal: true },
     { name: "CSS", logo: "https://cdn.worldvectorlogo.com/logos/css-3.svg", isLocal: false },
-    { name: "OpenAI", logo: openaiLogo, isLocal: true },
-    { name: "Gemini", logo: geminiLogo, isLocal: true },
-    { name: "API Integration", logo: "https://cdn.worldvectorlogo.com/logos/postman.svg", isLocal: false },
+    { name: "OpenAI", logo: openaiLogoNew, isLocal: true },
+    { name: "Gemini", logo: geminiLogoNew, isLocal: true },
+    { name: "API Integration", logo: apiIntegrationLogo, isLocal: true },
     { name: "Webhooks", logo: webhooksLogo, isLocal: true },
     { name: "REST API", logo: restApiLogo, isLocal: true },
     { name: "Slack", logo: slackLogo, isLocal: true },
