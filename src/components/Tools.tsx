@@ -20,6 +20,8 @@ import airtableLogo from "@/assets/airtable-logo.png";
 import apiIntegrationLogo from "@/assets/api-integration-logo.jpg";
 import geminiLogoNew from "@/assets/gemini-logo-new.png";
 import openaiLogoNew from "@/assets/openai-logo-new.webp";
+import shopifyLogo from "@/assets/shopify-logo.png";
+import wordpressLogo from "@/assets/wordpress-logo.jpg";
 
 const Tools = () => {
   const tools = [
@@ -46,6 +48,8 @@ const Tools = () => {
     { name: "Webhooks", logo: webhooksLogo, isLocal: true },
     { name: "REST API", logo: restApiLogo, isLocal: true },
     { name: "Slack", logo: slackLogo, isLocal: true },
+    { name: "Shopify", logo: shopifyLogo, isLocal: true },
+    { name: "WordPress", logo: wordpressLogo, isLocal: true },
   ];
 
   return (
