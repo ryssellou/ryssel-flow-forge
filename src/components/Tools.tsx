@@ -49,9 +49,9 @@ const Tools = () => {
   ];
 
   return (
-    <section id="tools" className="py-20 bg-section-bg overflow-hidden">
+    <section id="tools" className="py-32 bg-background overflow-hidden relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Tools & Technologies
           </h2>
@@ -60,38 +60,34 @@ const Tools = () => {
           </p>
         </div>
 
-        {/* Continuous Marquee */}
-        <div className="relative overflow-hidden">
-          <div className="flex space-x-8 animate-marquee">
-            {[...tools, ...tools].map((tool, index) => (
+        {/* Minimalist Marquee Band */}
+        <div className="relative overflow-hidden py-12">
+          <div className="flex space-x-6 animate-marquee">
+            {[...tools, ...tools, ...tools].map((tool, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex flex-col items-center justify-center p-4 min-w-[80px] bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl hover:bg-card/60 hover:scale-110 hover:border-primary/20 transition-all duration-500 group cursor-pointer shadow-sm hover:shadow-lg"
+                className="flex-shrink-0 flex items-center justify-center p-6 min-w-[120px] bg-muted/5 backdrop-blur-sm border border-border/10 rounded-lg hover:bg-muted/10 hover:border-border/20 transition-all duration-700 ease-in-out group cursor-pointer"
               >
-                <div className="w-12 h-12 flex items-center justify-center mb-2">
+                <div className="w-14 h-14 flex items-center justify-center">
                   <img 
                     src={tool.isLocal ? tool.logo : tool.logo} 
                     alt={`${tool.name} logo`}
-                    className="w-full h-full object-contain transition-all duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
                     onError={(e) => {
-                      // Fallback to text if image fails to load
                       const parent = e.currentTarget.parentElement;
                       if (parent) {
-                        parent.innerHTML = `<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"><span class="text-xs font-bold text-foreground">${tool.name}</span></div>`;
+                        parent.innerHTML = `<div class="w-14 h-14 bg-muted/10 rounded-lg flex items-center justify-center"><span class="text-xs font-semibold text-muted-foreground">${tool.name}</span></div>`;
                       }
                     }}
                   />
                 </div>
-                <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-center leading-tight">
-                  {tool.name}
-                </span>
               </div>
             ))}
           </div>
 
-          {/* Fade gradient overlays */}
-          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-section-bg via-section-bg/80 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-section-bg via-section-bg/80 to-transparent pointer-events-none z-10"></div>
+          {/* Subtle fade gradient overlays */}
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background via-background/90 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background via-background/90 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>
