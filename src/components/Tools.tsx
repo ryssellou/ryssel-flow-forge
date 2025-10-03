@@ -24,7 +24,7 @@ import shopifyLogo from "@/assets/shopify-logo.png";
 import wordpressLogo from "@/assets/wordpress-logo.jpg";
 
 const Tools = () => {
-  const baseTools = [
+  const tools = [
     { name: "n8n", logo: n8nLogo, isLocal: true },
     { name: "Zapier", logo: zapierLogo, isLocal: true },
     { name: "Make", logo: makeLogo, isLocal: true },
@@ -52,9 +52,6 @@ const Tools = () => {
     { name: "WordPress", logo: wordpressLogo, isLocal: true },
   ];
 
-  // Duplicate each tool twice consecutively for seamless looping
-  const tools = baseTools.flatMap(tool => [tool, tool]);
-
   return (
     <section id="tools" className="py-20 bg-section-bg overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,7 +67,7 @@ const Tools = () => {
         {/* Continuous Marquee */}
         <div className="relative overflow-hidden">
           <div className="flex space-x-8 animate-marquee will-change-transform">
-            {[...tools, ...tools].map((tool, index) => (
+            {[...tools, ...tools, ...tools, ...tools].map((tool, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 flex flex-col items-center justify-center p-4 min-w-[80px] bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl hover:bg-card/60 hover:scale-110 hover:border-primary/20 transition-all duration-500 group cursor-pointer shadow-sm hover:shadow-lg"
