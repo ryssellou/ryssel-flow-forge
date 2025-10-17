@@ -21,7 +21,10 @@ import apiIntegrationLogo from "@/assets/api-integration-logo.jpg";
 import geminiLogoNew from "@/assets/gemini-logo-new.png";
 import openaiLogoNew from "@/assets/openai-logo-new.webp";
 import shopifyLogo from "@/assets/shopify-logo.png";
-import wordpressLogo from "@/assets/wordpress-logo.jpg";
+import wordpressLogo from "@/assets/wordpress-logo-new.jpg";
+import shopifyLogoNew from "@/assets/shopify-logo-new.png";
+import clickupLogo from "@/assets/clickup-logo.jpeg";
+import resendLogo from "@/assets/resend-logo.jpeg";
 
 const Tools = () => {
   const tools = [
@@ -48,9 +51,14 @@ const Tools = () => {
     { name: "Webhooks", logo: webhooksLogo, isLocal: true },
     { name: "REST API", logo: restApiLogo, isLocal: true },
     { name: "Slack", logo: slackLogo, isLocal: true },
-    { name: "Shopify", logo: shopifyLogo, isLocal: true },
+    { name: "Shopify", logo: shopifyLogoNew, isLocal: true },
     { name: "WordPress", logo: wordpressLogo, isLocal: true },
+    { name: "ClickUp", logo: clickupLogo, isLocal: true },
+    { name: "Resend", logo: resendLogo, isLocal: true },
   ];
+
+  // Duplicate each icon twice for seamless looping
+  const duplicatedTools = tools.flatMap(tool => [tool, tool]);
 
   return (
     <section id="tools" className="py-20 bg-section-bg overflow-hidden">
@@ -67,7 +75,7 @@ const Tools = () => {
         {/* Continuous Marquee */}
         <div className="relative overflow-hidden">
           <div className="flex space-x-8 animate-marquee will-change-transform">
-            {[...tools, ...tools, ...tools, ...tools, ...tools, ...tools, ...tools, ...tools].map((tool, index) => (
+            {[...duplicatedTools, ...duplicatedTools, ...duplicatedTools, ...duplicatedTools].map((tool, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 flex flex-col items-center justify-center p-4 min-w-[80px] bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl hover:bg-card/60 hover:scale-110 hover:border-primary/20 transition-all duration-500 group cursor-pointer shadow-sm hover:shadow-lg"
