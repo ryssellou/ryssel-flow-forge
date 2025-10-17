@@ -59,6 +59,9 @@ const Tools = () => {
 
   // Duplicate each icon twice for seamless looping
   const duplicatedTools = tools.flatMap(tool => [tool, tool]);
+  
+  // Create enough copies to ensure seamless infinite scroll
+  const infiniteTools = [...duplicatedTools, ...duplicatedTools, ...duplicatedTools, ...duplicatedTools, ...duplicatedTools, ...duplicatedTools];
 
   return (
     <section id="tools" className="py-20 bg-section-bg overflow-hidden">
@@ -75,7 +78,7 @@ const Tools = () => {
         {/* Continuous Marquee */}
         <div className="relative overflow-hidden">
           <div className="flex space-x-8 animate-marquee will-change-transform">
-            {[...duplicatedTools, ...duplicatedTools, ...duplicatedTools, ...duplicatedTools].map((tool, index) => (
+            {infiniteTools.map((tool, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 flex flex-col items-center justify-center p-4 min-w-[80px] bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl hover:bg-card/60 hover:scale-110 hover:border-primary/20 transition-all duration-500 group cursor-pointer shadow-sm hover:shadow-lg"
