@@ -1,40 +1,45 @@
 import { Card } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
+import n8nLogo from "@/assets/n8n-logo.png";
+import makeLogo from "@/assets/make-logo.svg";
+import openaiLogo from "@/assets/openai-logo-new.webp";
+import zapierLogo from "@/assets/zapier-logo.png";
+import goHighLevelLogo from "@/assets/gohighlevel-logo.png";
 
 const Portfolio = () => {
   const projectCategories = [
     {
       title: "n8n Projects",
       description: "Advanced workflow automation solutions built with n8n for complex business processes.",
-      logo: "https://docs.n8n.io/assets/images/n8n-logo-bw-1ef9160ee7c3f5a6cc1de57dc2dd8bb1.svg",
+      logo: n8nLogo,
       technologies: ["n8n", "API Integration", "Webhooks"],
       url: "https://www.canva.com/design/DAGz_oIacGc/H19TO77n-zH3_nXcNCVV4Q/view?utm_content=DAGz_oIacGc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha4a12c76bb"
     },
     {
       title: "Make Projects", 
       description: "Sophisticated automation scenarios using Make platform for seamless integrations.",
-      logo: "https://www.make.com/en/help/image/uuid-a2518a62-3e93-7faa-fe7e-c0b5f8096c89.svg",
+      logo: makeLogo,
       technologies: ["Make", "API Integration", "REST API"],
       url: "https://www.canva.com/design/DAGz_4o63vU/cE-RXFm0vITOFUnseM1--g/view?utm_content=DAGz_4o63vU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1e334e6b61"
     },
     {
       title: "AI/ML Projects",
       description: "Intelligent solutions leveraging artificial intelligence and machine learning capabilities.",
-      logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg",
+      logo: openaiLogo,
       technologies: ["OpenAI", "Python", "Gemini"],
       url: "https://www.canva.com/design/DAG0CaIiPbk/i6_AS5Xv7jx2sl2dDbIBWw/view?utm_content=DAG0CaIiPbk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he242f2907a"
     },
     {
       title: "Zapier Projects",
       description: "Streamlined workflow automation connecting your favorite apps and services.",
-      logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg",
+      logo: zapierLogo,
       technologies: ["Zapier", "Webhooks", "API Integration"],
       url: "https://www.canva.com/design/DAGz_iwLeNE/Zi5W8QLPhfjc8O2HTjoGOA/view?utm_content=DAGz_iwLeNE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4839ac1124"  
     },
     {
       title: "GHL Projects",
       description: "Comprehensive business automation solutions using GoHighLevel platform.",
-      logo: "https://assets.gohighlevel.com/images/GHL-Logo-White.svg",
+      logo: goHighLevelLogo,
       technologies: ["GoHighLevel", "CRM", "Marketing Automation"],
       url: "https://www.canva.com/design/DAG0ESwYuPI/X-97cLtiHcdAOjYvuVXzgQ/view?utm_content=DAG0ESwYuPI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h667425454a"
     }
