@@ -45,6 +45,12 @@ const Services = () => {
       title: "AI Integration",
       description: "Implement AI solutions into existing workflows and systems for enhanced automation capabilities.",
       features: ["AI model integration", "Intelligent automation", "Data analysis", "Process optimization"]
+    },
+    {
+      icon: Brain,
+      title: "Machine Learning & AI",
+      description: "Develop and deploy machine learning models and AI-powered solutions tailored to your business needs.",
+      features: ["ML model development", "AI consulting", "Predictive analytics", "Custom AI solutions"]
     }
   ];
 

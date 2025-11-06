@@ -7,9 +7,9 @@ const Experience = () => {
     {
       title: "AI Automation Specialist",
       company: "AI Freedom Agency",
-      period: "October 2025 – Present",
+      period: "October 2025",
       location: "International",
-      type: "Full-time",
+      type: "Contract",
       description: "Specializing in AI automation solutions, implementing intelligent workflows and systems for clients across various industries.",
       achievements: [
         "Develop AI-powered automation solutions",
