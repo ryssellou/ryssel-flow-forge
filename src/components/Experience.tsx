@@ -5,6 +5,19 @@ import { Calendar, MapPin, Award } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "AI Automation Specialist",
+      company: "AI Freedom Agency",
+      period: "October 2025 – Present",
+      location: "International",
+      type: "Full-time",
+      description: "Specializing in AI automation solutions, implementing intelligent workflows and systems for clients across various industries.",
+      achievements: [
+        "Develop AI-powered automation solutions",
+        "Implement intelligent workflow systems",
+        "Deliver international client projects"
+      ]
+    },
+    {
       title: "Fullstack Developer Intern (WordPress & Laravel)",
       company: "ROC.PH Digital Marketing Services",
       period: "June – August 2024",
