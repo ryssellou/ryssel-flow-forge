@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Zap, Settings, Database, Workflow, Code, Brain } from "lucide-react";
+import { Zap, Settings, Database, Workflow, Code, Brain, Building2 } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -21,6 +21,12 @@ const Services = () => {
       title: "n8n Workflows",
       description: "Self-hosted automation solutions with n8n for complete control over your automation infrastructure.",
       features: ["Custom nodes", "Self-hosted", "Open source", "Advanced logic"]
+    },
+    {
+      icon: Building2,
+      title: "GoHighLevel Automation",
+      description: "All-in-one CRM and marketing automation solutions using GoHighLevel platform for agencies and businesses.",
+      features: ["CRM automation", "Marketing funnels", "Client management", "Pipeline automation"]
     },
     {
       icon: Database,
