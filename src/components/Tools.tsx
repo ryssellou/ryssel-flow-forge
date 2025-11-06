@@ -70,11 +70,11 @@ const Tools = () => {
           </p>
         </div>
 
-        {/* Continuous Marquee - Shows complete sequence twice */}
+        {/* Continuous Marquee - Shows all tools multiple times for visibility */}
         <div className="relative overflow-hidden">
           <div className="flex space-x-8 animate-marquee will-change-transform">
-            {/* Duplicate the sequence twice for seamless looping */}
-            {[...tools, ...tools].map((tool, index) => (
+            {/* Create 4 copies to ensure all tools are visible during the loop */}
+            {[...tools, ...tools, ...tools, ...tools].map((tool, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 flex flex-col items-center justify-center p-4 min-w-[80px] bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl hover:bg-card/60 hover:scale-110 hover:border-primary/20 transition-all duration-500 group cursor-pointer shadow-sm hover:shadow-lg"
