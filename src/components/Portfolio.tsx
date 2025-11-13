@@ -50,31 +50,31 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-section-bg">
+    <section id="portfolio" className="py-12 sm:py-16 md:py-20 bg-section-bg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
             Portfolio
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Explore my project categories showcasing automation solutions and innovative applications
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {projectCategories.map((category, index) => (
             <Card 
               key={index} 
-              className="p-8 bg-gradient-card border-0 shadow-md hover:shadow-xl transition-smooth group cursor-pointer"
+              className="p-5 sm:p-6 md:p-8 bg-gradient-card border-0 shadow-md hover:shadow-xl transition-smooth group cursor-pointer"
               onClick={() => handleProjectClick(category.url)}
             >
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-muted/50 rounded-lg flex items-center justify-center">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-muted/50 rounded-lg flex items-center justify-center flex-shrink-0">
                     <img 
                       src={category.logo} 
                       alt={`${category.title} logo`}
-                      className="w-8 h-8 object-contain transition-all duration-300 group-hover:scale-110"
+                      className="w-6 h-6 sm:w-8 sm:h-8 object-contain transition-all duration-300 group-hover:scale-110"
                       onError={(e) => {
                         const parent = e.currentTarget.parentElement;
                         if (parent) {

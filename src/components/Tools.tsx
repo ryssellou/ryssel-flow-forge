@@ -59,13 +59,13 @@ const Tools = () => {
 
 
   return (
-    <section id="tools" className="py-20 bg-section-bg overflow-hidden">
+    <section id="tools" className="py-12 sm:py-16 md:py-20 bg-section-bg overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
             Tools & Technologies
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground px-4">
             Core technologies I use to build automation solutions
           </p>
         </div>

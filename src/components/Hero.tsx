@@ -19,32 +19,32 @@ const Hero = () => {
               <img 
                 src="/profile-pic-ryssel-calaor.png" 
                 alt="Ryssel Calaor - AI Automation Specialist"
-                className="w-[416px] h-[416px] lg:w-[500px] lg:h-[500px] object-cover rounded-2xl shadow-2xl"
+                className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] object-cover rounded-2xl shadow-2xl"
               />
               <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-xl opacity-50 animate-pulse"></div>
             </div>
           </div>
 
           {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left order-2 lg:order-1 max-w-lg">
+          <div className="flex-1 text-center lg:text-left order-2 lg:order-1 max-w-lg px-4">
             {/* Greeting */}
-            <div className="mb-8">
-              <p className="text-2xl text-muted-foreground mb-4 font-light">Hello!</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-foreground tracking-tight mb-4">
+            <div className="mb-6 sm:mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-3 sm:mb-4 font-light">Hello!</p>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-foreground tracking-tight mb-3 sm:mb-4">
                 I'm <span className="font-bold text-foreground relative inline-block animate-pulse">Ryssel Calaor</span>
               </h1>
               
-              <p className="text-xl sm:text-2xl mb-8 text-foreground font-semibold relative inline-block">
+              <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-foreground font-semibold relative inline-block">
                 AI Automation Specialist
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12">
               <Button
                 size="lg"
                 onClick={() => scrollToSection("#contact")}
-                className="click-effect hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                className="click-effect hover:scale-105 transition-all duration-300 hover:shadow-lg w-full sm:w-auto"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Get In Touch
@@ -53,7 +53,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => scrollToSection("#portfolio")}
-                className="click-effect hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                className="click-effect hover:scale-105 transition-all duration-300 hover:shadow-lg w-full sm:w-auto"
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
                 My Works
@@ -61,7 +61,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 mb-12">
+            <div className="flex justify-center lg:justify-start space-x-4 sm:space-x-6 mb-8 sm:mb-12">
               <a
                 href="https://www.linkedin.com/in/ryssel-calaor"
                 target="_blank"
