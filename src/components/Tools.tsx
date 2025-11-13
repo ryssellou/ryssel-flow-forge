@@ -25,6 +25,8 @@ import wordpressLogo from "@/assets/wordpress-logo-new.jpg";
 import shopifyLogoNew from "@/assets/shopify-logo-new.png";
 import clickupLogo from "@/assets/clickup-logo.jpeg";
 import resendLogo from "@/assets/resend-logo.jpeg";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Tools = () => {
   const tools = [
@@ -70,39 +72,48 @@ const Tools = () => {
           </p>
         </div>
 
-        {/* Continuous Marquee - Seamless infinite loop */}
-        <div className="relative overflow-hidden">
-          <div className="flex space-x-8 animate-marquee will-change-transform">
-            {/* Exactly 2 copies for seamless -50% translation loop */}
-            {[...tools, ...tools].map((tool, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 flex flex-col items-center justify-center p-4 min-w-[80px] bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl hover:bg-card/60 hover:scale-110 hover:border-primary/20 transition-all duration-500 group cursor-pointer shadow-sm hover:shadow-lg"
-              >
-                <div className="w-12 h-12 flex items-center justify-center mb-2">
-                  <img 
-                    src={tool.isLocal ? tool.logo : tool.logo} 
-                    alt={`${tool.name} logo`}
-                    className="w-full h-full object-contain transition-all duration-500 group-hover:scale-110"
-                    onError={(e) => {
-                      // Fallback to text if image fails to load
-                      const parent = e.currentTarget.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"><span class="text-xs font-bold text-foreground">${tool.name}</span></div>`;
-                      }
-                    }}
-                  />
-                </div>
-                <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-center leading-tight">
-                  {tool.name}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Fade gradient overlays */}
-          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-section-bg via-section-bg/80 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-section-bg via-section-bg/80 to-transparent pointer-events-none z-10"></div>
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+                stopOnInteraction: true,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {tools.map((tool, index) => (
+                <CarouselItem key={index} className="pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 xl:basis-[12.5%]">
+                  <div className="flex flex-col items-center justify-center p-4 min-w-[80px] bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl hover:bg-card/60 hover:scale-110 hover:border-primary/20 transition-all duration-500 group cursor-pointer shadow-sm hover:shadow-lg">
+                    <div className="w-12 h-12 flex items-center justify-center mb-2">
+                      <img 
+                        src={tool.isLocal ? tool.logo : tool.logo} 
+                        alt={`${tool.name} logo`}
+                        className="w-full h-full object-contain transition-all duration-500 group-hover:scale-110"
+                        onError={(e) => {
+                          // Fallback to text if image fails to load
+                          const parent = e.currentTarget.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"><span class="text-xs font-bold text-foreground">${tool.name}</span></div>`;
+                          }
+                        }}
+                      />
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 text-center leading-tight">
+                      {tool.name}
+                    </span>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border-border hover:bg-background" />
+            <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm border-border hover:bg-background" />
+          </Carousel>
         </div>
       </div>
     </section>
