@@ -18,33 +18,6 @@ const Experience = () => {
       ]
     },
     {
-      title: "Fullstack Developer Intern (WordPress & Laravel)",
-      company: "ROC.PH Digital Marketing Services",
-      period: "June – August 2024",
-      location: "Philippines",
-      type: "Internship",
-      description: "Completed 240 hours of hands-on training in fullstack web development and served as Team Leader for Side Project 4.",
-      achievements: [
-        "Led development team for major side project",
-        "Gained expertise in full-stack WordPress development",
-        "Completed intensive 240-hour training program"
-      ]
-    },
-    {
-      title: "Innovation Fellowship Intern",
-      company: "Eskwelabs",
-      period: "January – March 2025",
-      location: "Philippines",
-      type: "Fellowship",
-      description: "Participated in data-driven innovation through collaborative, project-based learning in a startup setting and handled events operations.",
-      achievements: [
-        "Developed data-driven solutions",
-        "Managed events operations",
-        "Collaborated in startup environment",
-        "Applied innovation methodologies"
-      ]
-    },
-    {
       title: "Prompt Engineering Research and Integration Intern",
       company: "Excelerate",
       period: "July – August 2025",
@@ -71,6 +44,20 @@ const Experience = () => {
       ]
     },
     {
+      title: "Innovation Fellowship Intern",
+      company: "Eskwelabs",
+      period: "January – March 2025",
+      location: "Philippines",
+      type: "Fellowship",
+      description: "Participated in data-driven innovation through collaborative, project-based learning in a startup setting and handled events operations.",
+      achievements: [
+        "Developed data-driven solutions",
+        "Managed events operations",
+        "Collaborated in startup environment",
+        "Applied innovation methodologies"
+      ]
+    },
+    {
       title: "Data Analytics Online Internship",
       company: "Deloitte",
       period: "2025",
@@ -81,6 +68,19 @@ const Experience = () => {
         "Developed data visualization skills",
         "Generated business insights",
         "Applied analytics methodologies"
+      ]
+    },
+    {
+      title: "Fullstack Developer Intern (WordPress & Laravel)",
+      company: "ROC.PH Digital Marketing Services",
+      period: "June – August 2024",
+      location: "Philippines",
+      type: "Internship",
+      description: "Completed 240 hours of hands-on training in fullstack web development and served as Team Leader for Side Project 4.",
+      achievements: [
+        "Led development team for major side project",
+        "Gained expertise in full-stack WordPress development",
+        "Completed intensive 240-hour training program"
       ]
     }
   ];
