@@ -77,10 +77,11 @@ const Tools = () => {
             opts={{
               align: "start",
               loop: true,
+              duration: 40,
             }}
             plugins={[
               Autoplay({
-                delay: 2000,
+                delay: 3500,
                 stopOnInteraction: false,
               }),
             ]}
