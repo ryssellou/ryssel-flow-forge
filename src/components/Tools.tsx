@@ -81,7 +81,7 @@ const Tools = () => {
             plugins={[
               Autoplay({
                 delay: 2000,
-                stopOnInteraction: true,
+                stopOnInteraction: false,
               }),
             ]}
             className="w-full"
