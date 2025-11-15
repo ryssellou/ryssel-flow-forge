@@ -171,19 +171,68 @@ export default {
             transform: "translateX(0)"
           }
         },
+        "fade-in-up-out": {
+          "0%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateY(30px)"
+          }
+        },
+        "fade-in-out": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" }
+        },
+        "scale-in-out": {
+          "0%": {
+            opacity: "1",
+            transform: "scale(1)"
+          },
+          "100%": {
+            opacity: "0",
+            transform: "scale(0.95)"
+          }
+        },
+        "slide-in-left-out": {
+          "0%": {
+            opacity: "1",
+            transform: "translateX(0)"
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateX(-50px)"
+          }
+        },
+        "slide-in-right-out": {
+          "0%": {
+            opacity: "1",
+            transform: "translateX(0)"
+          },
+          "100%": {
+            opacity: "0",
+            transform: "translateX(50px)"
+          }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 3s ease-in-out infinite",
         marquee: "marquee 20s linear infinite",
-        "fade-in-up": "fade-in-up 0.6s ease-out",
-        "fade-in": "fade-in 0.8s ease-out",
-        "scale-in": "scale-in 0.5s ease-out",
+        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.8s ease-out forwards",
+        "scale-in": "scale-in 0.5s ease-out forwards",
         float: "float 6s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite",
-        "slide-in-left": "slide-in-left 0.6s ease-out",
-        "slide-in-right": "slide-in-right 0.6s ease-out",
+        "slide-in-left": "slide-in-left 0.6s ease-out forwards",
+        "slide-in-right": "slide-in-right 0.6s ease-out forwards",
+        "fade-in-up-out": "fade-in-up-out 0.3s ease-out forwards",
+        "fade-in-out": "fade-in-out 0.3s ease-out forwards",
+        "scale-in-out": "scale-in-out 0.3s ease-out forwards",
+        "slide-in-left-out": "slide-in-left-out 0.3s ease-out forwards",
+        "slide-in-right-out": "slide-in-right-out 0.3s ease-out forwards",
       },
     },
   },
