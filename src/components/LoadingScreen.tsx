@@ -27,11 +27,15 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
       
       {/* Loading Content */}
       <div className="relative z-10 flex flex-col items-center gap-8 animate-scale-in">
-        {/* Logo/Initial */}
+        {/* Logo */}
         <div className="relative group">
           <div className="absolute -inset-8 bg-gradient-primary rounded-full blur-3xl opacity-30 animate-glow"></div>
-          <div className="relative w-32 h-32 rounded-full bg-gradient-premium flex items-center justify-center shadow-premium ring-1 ring-border/20">
-            <span className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">R</span>
+          <div className="relative w-32 h-32 rounded-full bg-gradient-premium flex items-center justify-center shadow-premium ring-1 ring-border/20 p-4">
+            <img 
+              src="/logo-for-portfolio.png" 
+              alt="Ryssel Calaor Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
           <div className="absolute inset-0 rounded-full bg-gradient-shine opacity-50 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
         </div>
