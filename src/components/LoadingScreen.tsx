@@ -40,9 +40,19 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
           <div className="absolute inset-0 rounded-full bg-gradient-shine opacity-50 animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
         </div>
 
+        {/* Premium Trust Message */}
+        <div className="text-center space-y-3 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent tracking-tight">
+            Your Search Is Over
+          </h2>
+          <p className="text-xl md:text-2xl text-foreground/80 font-light tracking-wide">
+            I am the one you are looking for
+          </p>
+        </div>
+
         {/* Loading Text */}
         <div className="text-center space-y-3">
-          <h2 className="text-2xl font-light text-foreground tracking-wide">
+          <h2 className="text-lg font-light text-muted-foreground tracking-wide">
             Loading Portfolio
           </h2>
           <div className="flex items-center gap-2 text-muted-foreground">
