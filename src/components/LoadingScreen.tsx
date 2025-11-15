@@ -43,10 +43,10 @@ const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void })
         {/* Premium Trust Message */}
         <div className="text-center space-y-3 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-premium bg-clip-text text-transparent tracking-tight">
-            Your Search Is Over
+            You've found the right person...
           </h2>
           <p className="text-xl md:text-2xl text-foreground/80 font-light tracking-wide">
-            I am the one you are looking for
+            Where your vision meets execution...
           </p>
         </div>
 
