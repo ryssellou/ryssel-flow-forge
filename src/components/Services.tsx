@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Zap, Settings, Database, Workflow, Code, Brain, Building2 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Services = () => {
   const services = [
@@ -55,8 +56,12 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-12 sm:py-16 md:py-20 bg-background relative overflow-hidden">
+      {/* Premium Background Effects */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Services
@@ -67,33 +72,37 @@ const Services = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="p-4 sm:p-5 md:p-6 bg-gradient-card border-0 shadow-md hover:shadow-xl transition-smooth group">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-bounce">
-                  <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                </div>
+          {services.map((service, index) => {
+            const cardRef = useScrollAnimation('fade-in-up', index * 80);
+            return (
+              <div key={index} ref={cardRef} className="opacity-0">
+                <Card className="p-4 sm:p-5 md:p-6 bg-gradient-card border-0 shadow-md hover:shadow-premium transition-all duration-500 group h-full">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                    </div>
                 
-                <h3 className="text-lg sm:text-xl font-semibold text-foreground">
-                  {service.title}
-                </h3>
-                
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-                
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                      <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="text-sm text-muted-foreground flex items-center">
+                          <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Card>
               </div>
-            </Card>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-16 text-center">
