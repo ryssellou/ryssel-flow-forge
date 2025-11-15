@@ -40,13 +40,16 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <button 
+            onClick={() => scrollToSection("#hero")}
+            className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity duration-300 cursor-pointer"
+          >
             <img 
               src="/favicon-portfolio.png" 
               alt="Ry Calaor Logo" 
               className="h-16 w-auto"
             />
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
