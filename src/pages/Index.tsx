@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Tools from "@/components/Tools";
@@ -7,10 +8,17 @@ import Experience from "@/components/Experience";
 import Portfolio from "@/components/Portfolio";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />;
+  }
+
   return (
-    <div className="min-h-screen bg-background pt-16">
+    <div className="min-h-screen bg-background pt-16 animate-fade-in">
       <Header />
       <Hero />
       <Tools />
