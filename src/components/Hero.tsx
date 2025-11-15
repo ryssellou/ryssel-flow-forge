@@ -90,7 +90,7 @@ const Hero = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               </a>
               <a
-                href="https://www.onlinejobs.ph/jobseekers/info/4489746"
+                href="https://linktr.ee/rysselcalaor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative text-muted-foreground hover:text-foreground transition-elastic p-3 hover:scale-125 rounded-full glass-effect hover:shadow-glow"
