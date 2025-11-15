@@ -21,7 +21,7 @@ const Hero = () => {
           {/* Profile Picture - Premium */}
           <div className="flex-shrink-0 order-1 lg:order-2 animate-fade-in">
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-primary rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-700 animate-glow"></div>
+              <div className="absolute -inset-4 bg-gradient-primary rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
               <div className="absolute -inset-2 bg-gradient-premium rounded-3xl blur-xl opacity-20"></div>
               <img 
                 src="/profile-pic-ryssel-calaor.png" 
