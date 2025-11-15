@@ -77,7 +77,7 @@ const Tools = () => {
             opts={{
               align: "start",
               loop: true,
-              duration: 50,
+              duration: 250,
             }}
             plugins={[
               Autoplay({
