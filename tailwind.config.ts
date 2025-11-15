@@ -68,16 +68,22 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-card": "var(--gradient-card)",
         "gradient-tech": "var(--gradient-tech)",
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-premium": "var(--gradient-premium)",
+        "gradient-shine": "var(--gradient-shine)",
       },
       boxShadow: {
         sm: "var(--shadow-sm)",
         md: "var(--shadow-md)",
         lg: "var(--shadow-lg)",
         xl: "var(--shadow-xl)",
+        premium: "var(--shadow-premium)",
+        glow: "var(--shadow-glow)",
       },
       transitionTimingFunction: {
         smooth: "var(--transition-smooth)",
         bounce: "var(--transition-bounce)",
+        elastic: "var(--transition-elastic)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -113,12 +119,49 @@ export default {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          }
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        },
+        "scale-in": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.95)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          }
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" }
+        },
+        glow: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 3s ease-in-out infinite",
         marquee: "marquee 20s linear infinite",
+        "fade-in-up": "fade-in-up 0.6s ease-out",
+        "fade-in": "fade-in 0.8s ease-out",
+        "scale-in": "scale-in 0.5s ease-out",
+        float: "float 6s ease-in-out infinite",
+        glow: "glow 2s ease-in-out infinite",
       },
     },
   },
