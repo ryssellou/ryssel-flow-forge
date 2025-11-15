@@ -56,17 +56,17 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-20 bg-background relative overflow-hidden">
+    <section id="services" className="py-20 sm:py-24 md:py-28 bg-background relative overflow-hidden">
       {/* Premium Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Services
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive automation and integration solutions to streamline your business processes
           </p>
         </div>
