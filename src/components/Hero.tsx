@@ -102,7 +102,7 @@ const Hero = () => {
       </div>
       
       {/* Scroll Down Indicator */}
-      <div className="absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in" style={{ animationDelay: '1s' }}>
+      <div className="absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in z-20" style={{ animationDelay: '1s' }}>
         <button
           onClick={() => scrollToSection("#tools")}
           className="group flex flex-col items-center gap-3 p-3 hover:scale-110 transition-transform duration-500"
