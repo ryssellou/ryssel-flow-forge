@@ -100,17 +100,6 @@ const Hero = () => {
 
         </div>
       </div>
-      
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-10 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in z-50" style={{ animationDelay: '1s' }}>
-        <button
-          onClick={() => scrollToSection("#tools")}
-          className="group flex flex-col items-center gap-3 p-3 hover:scale-110 transition-transform duration-500"
-        >
-          <span className="text-sm sm:text-base text-muted-foreground group-hover:text-primary transition-colors duration-300 tracking-wider font-medium">Scroll Down</span>
-          <ArrowDown className="w-6 h-6 sm:w-7 sm:h-7 text-primary animate-bounce" />
-        </button>
-      </div>
     </section>
   );
 };
