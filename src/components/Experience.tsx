@@ -143,11 +143,11 @@ const Experience = () => {
                   
                   <div className="space-y-2">
                     <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4 mr-2 text-foreground" />
+                      <Calendar className="w-4 h-4 mr-2 text-primary" />
                       {exp.period}
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="w-4 h-4 mr-2 text-foreground" />
+                      <MapPin className="w-4 h-4 mr-2 text-primary" />
                       {exp.location}
                     </div>
                   </div>
