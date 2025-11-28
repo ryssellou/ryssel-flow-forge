@@ -6,6 +6,19 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const Experience = () => {
   const experiences = [
     {
+      title: "AI Automation Engineer",
+      company: "SELR AI",
+      period: "November 2025",
+      location: "International",
+      type: "Freelance",
+      description: "Developing and implementing AI-driven automation solutions, designing intelligent systems and workflows for enhanced efficiency.",
+      achievements: [
+        "Build AI automation solutions",
+        "Design intelligent workflow systems",
+        "Optimize processes with AI"
+      ]
+    },
+    {
       title: "AI Automation Specialist",
       company: "AI Freedom Agency",
       period: "October 2025",
