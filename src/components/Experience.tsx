@@ -6,6 +6,19 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const Experience = () => {
   const experiences = [
     {
+      title: "Fullstack AI Software Developer",
+      company: "Lovable, .Net for API, n8n",
+      period: "December 2025",
+      location: "International",
+      type: "Contract",
+      description: "Building full-stack AI-powered applications using Lovable, developing APIs with .NET, and creating automation workflows with n8n.",
+      achievements: [
+        "Develop full-stack AI applications with Lovable",
+        "Build robust APIs using .NET framework",
+        "Create automation workflows with n8n"
+      ]
+    },
+    {
       title: "AI Automation Engineer",
       company: "SELR AI",
       period: "November 2025",
