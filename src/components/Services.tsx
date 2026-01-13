@@ -49,8 +49,8 @@ const Services = () => {
     {
       icon: Layers,
       title: "Fullstack Development using AI",
-      description: "Build complete web applications rapidly using AI-powered development tools like Lovable, combining frontend and backend seamlessly.",
-      features: ["AI-assisted coding", "Rapid prototyping", "Full-stack solutions", "Modern tech stack"]
+      description: "Build complete web applications rapidly using AI-powered vibe coding tools, combining frontend and backend seamlessly.",
+      features: ["Lovable", "Claude Code", "Antigravity", "Cursor", "Bolt", "Replit Agent"]
     },
     {
       icon: Zap,
