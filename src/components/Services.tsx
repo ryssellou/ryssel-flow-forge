@@ -1,10 +1,57 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Zap, Settings, Database, Workflow, Code, Brain, Building2 } from "lucide-react";
+import { Zap, Settings, Database, Workflow, Code, Brain, Building2, Layers } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { LucideIcon } from "lucide-react";
+
+interface ServiceData {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+const ServiceCard = ({ service, index }: { service: ServiceData; index: number }) => {
+  const cardRef = useScrollAnimation('fade-in-up', index * 80);
+  
+  return (
+    <div ref={cardRef} className="opacity-0">
+      <Card className="p-4 sm:p-5 md:p-6 bg-gradient-card border-0 shadow-md hover:shadow-premium transition-all duration-500 group h-full">
+        <div className="space-y-3 sm:space-y-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+          </div>
+      
+          <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+            {service.title}
+          </h3>
+          
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            {service.description}
+          </p>
+          
+          <ul className="space-y-2">
+            {service.features.map((feature, idx) => (
+              <li key={idx} className="text-sm text-muted-foreground flex items-center">
+                <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Card>
+    </div>
+  );
+};
 
 const Services = () => {
-  const services = [
+  const services: ServiceData[] = [
+    {
+      icon: Layers,
+      title: "Fullstack Development using AI",
+      description: "Build complete web applications rapidly using AI-powered development tools like Lovable, combining frontend and backend seamlessly.",
+      features: ["AI-assisted coding", "Rapid prototyping", "Full-stack solutions", "Modern tech stack"]
+    },
     {
       icon: Zap,
       title: "Zapier Automation",
@@ -72,37 +119,9 @@ const Services = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {services.map((service, index) => {
-            const cardRef = useScrollAnimation('fade-in-up', index * 80);
-            return (
-              <div key={index} ref={cardRef} className="opacity-0">
-                <Card className="p-4 sm:p-5 md:p-6 bg-gradient-card border-0 shadow-md hover:shadow-premium transition-all duration-500 group h-full">
-                  <div className="space-y-3 sm:space-y-4">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                    </div>
-                
-                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                    
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                          <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
-              </div>
-            );
-          })}
+          {services.map((service, index) => (
+            <ServiceCard key={index} service={service} index={index} />
+          ))}
         </div>
 
         <div className="mt-16 text-center">
