@@ -53,8 +53,8 @@ const ExperienceItem = ({ exp, index }: { exp: ExperienceData; index: number }) 
 const Experience = () => {
   const experiences: ExperienceData[] = [
     {
-      title: "Fullstack AI Software Developer",
-      company: "Lovable, .Net for API, n8n",
+      title: "Fullstack AI Developer",
+      company: "EVA",
       period: "December 2025",
       location: "International",
       type: "Contract",
