@@ -25,6 +25,9 @@ import wordpressLogo from "@/assets/wordpress-logo-new.jpg";
 import shopifyLogoNew from "@/assets/shopify-logo-new.png";
 import clickupLogo from "@/assets/clickup-logo.jpeg";
 import resendLogo from "@/assets/resend-logo.jpeg";
+import claudeCodeLogo from "@/assets/claude-code-logo.png";
+import antigravityLogo from "@/assets/antigravity-logo.png";
+import lovableLogo from "@/assets/lovable-logo.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -57,6 +60,9 @@ const Tools = () => {
     { name: "WordPress", logo: wordpressLogo, isLocal: true },
     { name: "ClickUp", logo: clickupLogo, isLocal: true },
     { name: "Resend", logo: resendLogo, isLocal: true },
+    { name: "Claude Code", logo: claudeCodeLogo, isLocal: true },
+    { name: "Antigravity", logo: antigravityLogo, isLocal: true },
+    { name: "Lovable", logo: lovableLogo, isLocal: true },
   ];
 
 
