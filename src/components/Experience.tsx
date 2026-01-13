@@ -1,10 +1,57 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Award } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
+interface ExperienceData {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  type: string;
+  description: string;
+  achievements: string[];
+}
+
+const ExperienceItem = ({ exp, index }: { exp: ExperienceData; index: number }) => {
+  const expRef = useScrollAnimation('slide-in-left', index * 100);
+  
+  return (
+    <div ref={expRef} className="border-b border-border pb-6 last:border-b-0 hover:bg-muted/20 transition-all duration-500 p-4 rounded-lg click-effect opacity-0">
+      <div className="grid md:grid-cols-4 gap-4">
+        <div className="md:col-span-2">
+          <h3 className="text-lg font-medium text-foreground mb-1">
+            {exp.title}
+          </h3>
+          <p className="text-muted-foreground font-medium mb-2">
+            {exp.company}
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {exp.description}
+          </p>
+        </div>
+        
+        <div className="space-y-2">
+          <div className="flex items-center text-sm text-muted-foreground">
+            <Calendar className="w-4 h-4 mr-2 text-primary" />
+            {exp.period}
+          </div>
+          <div className="flex items-center text-sm text-muted-foreground">
+            <MapPin className="w-4 h-4 mr-2 text-primary" />
+            {exp.location}
+          </div>
+        </div>
+        
+        <div className="flex justify-end">
+          <span className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded">
+            {exp.type}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Experience = () => {
-  const experiences = [
+  const experiences: ExperienceData[] = [
     {
       title: "Fullstack AI Software Developer",
       company: "Lovable, .Net for API, n8n",
@@ -112,13 +159,6 @@ const Experience = () => {
     }
   ];
 
-  const competitions = [
-    { name: "Global Hack Week: AI/ML (MLH)", result: "Top 5" },
-    { name: "Global Hack Week: Games (MLH)", result: "Top 17" },
-    { name: "Global Hack Week: Cloud (MLH)", result: "Top 16" },
-    { name: "USG Fresh START Hackathon", result: "3rd Place Overall" }
-  ];
-
   return (
     <section id="experience" className="py-12 sm:py-16 md:py-20 bg-section-bg relative overflow-hidden">
       {/* Premium Background Effects */}
@@ -137,43 +177,9 @@ const Experience = () => {
 
         {/* Experience Grid */}
         <div className="space-y-6 mb-16">
-          {experiences.map((exp, index) => {
-            const expRef = useScrollAnimation('slide-in-left', index * 100);
-            return (
-              <div key={index} ref={expRef} className="border-b border-border pb-6 last:border-b-0 hover:bg-muted/20 transition-all duration-500 p-4 rounded-lg click-effect opacity-0">
-                <div className="grid md:grid-cols-4 gap-4">
-                  <div className="md:col-span-2">
-                    <h3 className="text-lg font-medium text-foreground mb-1">
-                      {exp.title}
-                    </h3>
-                    <p className="text-muted-foreground font-medium mb-2">
-                      {exp.company}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {exp.description}
-                    </p>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4 mr-2 text-primary" />
-                      {exp.period}
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="w-4 h-4 mr-2 text-primary" />
-                      {exp.location}
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-end">
-                    <span className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded">
-                      {exp.type}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {experiences.map((exp, index) => (
+            <ExperienceItem key={index} exp={exp} index={index} />
+          ))}
         </div>
       </div>
     </section>
