@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-      
+
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
           {/* Profile Picture - Premium */}
@@ -23,8 +23,8 @@ const Hero = () => {
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-primary rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
               <div className="absolute -inset-2 bg-gradient-premium rounded-3xl blur-xl opacity-20"></div>
-              <img 
-                src="/profile-pic-ryssel-calaor.png" 
+              <img
+                src="/profile-pic-ryssel-calaor.png"
                 alt="Ryssel Calaor - AI Automation Specialist"
                 className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] object-cover rounded-2xl shadow-premium ring-1 ring-border/20 group-hover:scale-105 transition-all duration-700 group-hover:shadow-glow"
               />
@@ -40,13 +40,11 @@ const Hero = () => {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground tracking-tight mb-4 sm:mb-5">
                 I'm <span className="font-bold text-foreground relative inline-block bg-gradient-primary bg-clip-text text-transparent animate-glow">Ryssel Calaor</span>
               </h1>
-              
-              <p className="text-xl sm:text-2xl md:text-3xl mb-8 sm:mb-10 text-foreground font-semibold relative inline-block">
-                <span className="relative">
-                  AI Automation Specialist
-                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-primary rounded-full"></span>
-                </span>
-              </p>
+
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-10 text-foreground font-semibold flex flex-col gap-1">
+                <span className="whitespace-nowrap">AI Automation Engineer</span>
+                <span className="text-primary/90 whitespace-nowrap">Full-Stack AI Developer</span>
+              </div>
             </div>
 
             {/* CTA Buttons - Premium */}

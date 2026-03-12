@@ -1,11 +1,12 @@
 import { Card } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Layout, Bot } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import n8nLogo from "@/assets/n8n-logo.png";
 import makeLogo from "@/assets/make-logo.svg";
 import openaiLogo from "@/assets/openai-logo-new.webp";
 import zapierLogo from "@/assets/zapier-logo.png";
 import goHighLevelLogo from "@/assets/gohighlevel-logo.png";
+
 
 const Portfolio = () => {
   const projectCategories = [
@@ -17,7 +18,7 @@ const Portfolio = () => {
       url: "https://www.canva.com/design/DAGz_oIacGc/H19TO77n-zH3_nXcNCVV4Q/view?utm_content=DAGz_oIacGc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha4a12c76bb"
     },
     {
-      title: "Make Projects", 
+      title: "Make Projects",
       description: "Sophisticated automation scenarios using Make platform for seamless integrations.",
       logo: makeLogo,
       technologies: ["Make", "API Integration", "REST API"],
@@ -35,7 +36,7 @@ const Portfolio = () => {
       description: "Streamlined workflow automation connecting your favorite apps and services.",
       logo: zapierLogo,
       technologies: ["Zapier", "Webhooks", "API Integration"],
-      url: "https://www.canva.com/design/DAGz_iwLeNE/Zi5W8QLPhfjc8O2HTjoGOA/view?utm_content=DAGz_iwLeNE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4839ac1124"  
+      url: "https://www.canva.com/design/DAGz_iwLeNE/Zi5W8QLPhfjc8O2HTjoGOA/view?utm_content=DAGz_iwLeNE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4839ac1124"
     },
     {
       title: "GHL Projects",
@@ -43,6 +44,20 @@ const Portfolio = () => {
       logo: goHighLevelLogo,
       technologies: ["GoHighLevel", "CRM", "Marketing Automation"],
       url: "https://www.canva.com/design/DAG0ESwYuPI/X-97cLtiHcdAOjYvuVXzgQ/view?utm_content=DAG0ESwYuPI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h667425454a"
+    },
+    {
+      title: "Low-code Platforms",
+      description: "Modern web applications and digital solutions built using industry-leading low-code and no-code platforms.",
+      icon: Layout,
+      technologies: ["Lovable", "Airtable", "Web Apps"],
+      url: "https://www.canva.com/design/DAG6gFc38-0/IUYvS_XAkilaBWQXS6HCfw/view?utm_content=DAG6gFc38-0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1dbed6de2b"
+    },
+    {
+      title: "Full-Stack Agentic AI & LLM",
+      description: "Sophisticated AI agents and large language model applications integrated into full-stack environments.",
+      icon: Bot,
+      technologies: ["AI Agents", "LLMs", "Full-Stack"],
+      url: "https://www.canva.com/design/DAHDhv7nuog/nO1l_IgZVKETu3_0fNAHMA/view?utm_content=DAHDhv7nuog&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9f7ecba91d"
     }
   ];
 
@@ -55,7 +70,7 @@ const Portfolio = () => {
       {/* Premium Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
@@ -71,24 +86,32 @@ const Portfolio = () => {
             const cardRef = useScrollAnimation('scale-in', index * 150);
             return (
               <div key={index} ref={cardRef} className="opacity-0">
-                <Card 
+                <Card
                   className="p-5 sm:p-6 md:p-8 bg-gradient-card border-0 shadow-md hover:shadow-premium transition-all duration-500 group cursor-pointer h-full"
                   onClick={() => handleProjectClick(category.url)}
                 >
                   <div className="space-y-4 sm:space-y-6">
                     <div className="flex items-center space-x-3 sm:space-x-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-muted/50 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <img 
-                          src={category.logo} 
-                          alt={`${category.title} logo`}
-                          className="w-6 h-6 sm:w-8 sm:h-8 object-contain transition-all duration-300 group-hover:scale-110"
-                          onError={(e) => {
-                            const parent = e.currentTarget.parentElement;
-                            if (parent) {
-                              parent.innerHTML = `<span class="text-xs font-bold text-foreground">${category.title.split(' ')[0]}</span>`;
-                            }
-                          }}
-                        />
+                        {category.logo ? (
+                          <img
+                            src={category.logo}
+                            alt={`${category.title} logo`}
+                            className="w-6 h-6 sm:w-8 sm:h-8 object-contain transition-all duration-300 group-hover:scale-110"
+                            onError={(e) => {
+                              const parent = e.currentTarget.parentElement;
+                              if (parent) {
+                                parent.innerHTML = `<span class="text-xs font-bold text-foreground">${category.title.split(' ')[0]}</span>`;
+                              }
+                            }}
+                          />
+                        ) : category.icon ? (
+                          <category.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary transition-all duration-300 group-hover:scale-110" />
+                        ) : (
+                          <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 rounded flex items-center justify-center">
+                            <span className="text-xs font-bold text-primary">{category.title.split(' ')[0][0]}</span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex-1">
                         <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-all duration-300">
@@ -97,14 +120,14 @@ const Portfolio = () => {
                       </div>
                       <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-all duration-300" />
                     </div>
-                    
+
                     <p className="text-muted-foreground leading-relaxed">
                       {category.description}
                     </p>
 
                     <div className="flex flex-wrap gap-2">
                       {category.technologies.map((tech, techIndex) => (
-                        <span 
+                        <span
                           key={techIndex}
                           className="px-3 py-1 text-xs bg-muted/50 text-muted-foreground rounded-full font-medium border border-border/30"
                         >
@@ -112,7 +135,7 @@ const Portfolio = () => {
                         </span>
                       ))}
                     </div>
-                    
+
                     <div className="pt-4 border-t border-border/50">
                       <span className="text-sm text-primary font-medium group-hover:underline">
                         View Projects →
