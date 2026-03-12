@@ -54,7 +54,7 @@ const Experience = () => {
   const experiences: ExperienceData[] = [
     {
       title: "Fullstack AI Developer",
-      company: "EVS",
+      company: "EVA",
       period: "November 2025 - January 2026",
       location: "International",
       type: "Contract",
