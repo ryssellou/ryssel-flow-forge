@@ -54,8 +54,8 @@ const Experience = () => {
   const experiences: ExperienceData[] = [
     {
       title: "Fullstack AI Developer",
-      company: "EVA",
-      period: "December 2025",
+      company: "EVS",
+      period: "November 2025 - January 2026",
       location: "International",
       type: "Contract",
       description: "Building full-stack AI-powered applications using Lovable, developing APIs with .NET, and creating automation workflows with n8n.",
@@ -81,7 +81,7 @@ const Experience = () => {
     {
       title: "AI Automation Specialist",
       company: "AI Freedom Agency",
-      period: "October 2025",
+      period: "September - November 2025",
       location: "International",
       type: "Contract",
       description: "Specializing in AI automation solutions, implementing intelligent workflows and systems for clients across various industries.",
