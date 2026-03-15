@@ -3,17 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
-
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const videoEl = document.getElementById("video-section");
+    if (!videoEl) return;
+
+    // Hide navbar while video section is visible; show for all other sections
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(videoEl);
+    return () => observer.disconnect();
   }, []);
 
   const navItems = [
@@ -35,70 +39,69 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 glass-effect shadow-premium border-b border-border/50 transition-all duration-500"
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[90%] max-w-3xl ${
+        isVisible
+          ? "opacity-100 translate-y-0 pointer-events-auto"
+          : "opacity-0 -translate-y-4 pointer-events-none"
+      }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button 
-            onClick={() => scrollToSection("#hero")}
-            className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity duration-300 cursor-pointer"
-          >
-            <img 
-              src="/favicon-portfolio.png" 
-              alt="Ry Calaor Logo" 
-              className="h-16 w-auto"
-            />
-          </button>
+      <div className="flex items-center justify-between bg-white/90 backdrop-blur-md rounded-full px-5 py-2 border border-gray-200/60 shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
+        {/* Logo */}
+        <button
+          onClick={() => scrollToSection("#hero")}
+          className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity duration-300 cursor-pointer"
+        >
+          <img
+            src="/favicon-portfolio.png"
+            alt="Ry Calaor Logo"
+            className="h-10 w-auto"
+          />
+        </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6">
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => scrollToSection(item.href)}
+              className="text-gray-600 hover:text-gray-900 transition-colors duration-300 text-sm font-medium"
+            >
+              {item.name}
+            </button>
+          ))}
+        </nav>
+
+        {/* Right side */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-gray-600 hover:bg-gray-100 rounded-full"
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile dropdown */}
+      {isMobileMenuOpen && (
+        <div className="mt-2 bg-white/95 backdrop-blur-md rounded-2xl border border-gray-200/60 shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-4 py-3 md:hidden">
+          <nav className="flex flex-col gap-1">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="group text-foreground hover:text-primary transition-elastic font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-primary after:origin-bottom-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                className="text-left px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-colors duration-200 text-sm font-medium"
               >
-                <span className="relative">
-                  {item.name}
-                  <span className="absolute inset-0 bg-gradient-shine opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                </span>
+                {item.name}
               </button>
             ))}
-            <ThemeToggle />
           </nav>
-
-          {/* Mobile menu button and theme toggle */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="click-effect"
-            >
-              {isMobileMenuOpen ? <X /> : <Menu />}
-            </Button>
-          </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left px-4 py-2 text-foreground hover:text-accent hover:bg-muted rounded-md transition-smooth"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-          </nav>
-        )}
-      </div>
+      )}
     </header>
   );
 };

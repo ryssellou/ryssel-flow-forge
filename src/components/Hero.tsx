@@ -38,12 +38,13 @@ const Hero = () => {
             <div className="mb-8 sm:mb-10">
               <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-4 sm:mb-5 font-light tracking-wide">Hello!</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-foreground tracking-tight mb-4 sm:mb-5">
-                I'm <span className="font-bold text-foreground relative inline-block bg-gradient-primary bg-clip-text text-transparent animate-glow">Ryssel Calaor</span>
+                I'm <span className="font-bold text-foreground relative inline-block pb-3 bg-gradient-primary bg-clip-text text-transparent animate-glow">Ryssel&nbsp;Calaor</span>
               </h1>
 
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-10 text-foreground font-semibold flex flex-col gap-1">
-                <span className="whitespace-nowrap">AI Automation Engineer</span>
-                <span className="text-primary/90 whitespace-nowrap">Full-Stack AI Developer</span>
+                <span className="whitespace-nowrap">Full-Stack AI Developer</span>
+                <span className="text-primary/90 whitespace-nowrap">AI Automation Specialist</span>
+                <span className="whitespace-nowrap">ML Developer</span>
               </div>
             </div>
 

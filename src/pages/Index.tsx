@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "@/components/Header";
+import VideoSection from "@/components/VideoSection";
 import Hero from "@/components/Hero";
 import Tools from "@/components/Tools";
 import About from "@/components/About";
@@ -18,8 +19,9 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background pt-16 animate-fade-in">
+    <div className="min-h-screen bg-background animate-fade-in">
       <Header />
+      <VideoSection />
       <Hero />
       <Tools />
       <About />
