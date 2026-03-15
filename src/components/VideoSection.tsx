@@ -12,7 +12,9 @@ const VideoSection = () => {
   const stickyRef     = useRef<HTMLDivElement>(null);
   const videoRef      = useRef<HTMLVideoElement>(null);
   const labelRefs     = useRef<(HTMLDivElement | null)[]>([]);
-  const maxOpacityRef = useRef(0); // scroll-gated max, read by mousemove handler
+  const maxOpacityRef = useRef(0);
+  const rafRef        = useRef<number | null>(null);
+  const targetTimeRef = useRef(0);
 
   const [progress, setProgress] = useState(0);
 
@@ -22,6 +24,9 @@ const VideoSection = () => {
     const container = containerRef.current;
     if (!video || !container) return;
 
+    // Ensure video is paused — a paused video seeks much faster
+    video.pause();
+
     const onScroll = () => {
       const { top, height } = container.getBoundingClientRect();
       const scrolled   = -top;
@@ -30,16 +35,26 @@ const VideoSection = () => {
 
       const p = Math.max(0, Math.min(1, scrolled / scrollable));
       setProgress(p);
-      video.currentTime = p * video.duration;
+      targetTimeRef.current = p * video.duration;
 
-      // Magnifying glass cursor only during the labels reveal phase
       if (stickyRef.current) {
         stickyRef.current.style.cursor = p >= 0.75 ? "zoom-in" : "default";
       }
+
+      // Batch seek to next animation frame — prevents flooding the decoder
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        if (video.readyState >= 2) {
+          video.currentTime = targetTimeRef.current;
+        }
+      });
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   // Keep ref in sync with state so mousemove handler always has fresh value
