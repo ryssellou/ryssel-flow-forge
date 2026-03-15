@@ -18,13 +18,29 @@ const VideoSection = () => {
 
   const [progress, setProgress] = useState(0);
 
+  // ── iOS unlock: Safari blocks seeking until video is "played" once ────────
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const unlock = () => {
+      video.play().then(() => video.pause()).catch(() => {});
+      window.removeEventListener("touchstart", unlock);
+      window.removeEventListener("click", unlock);
+    };
+    window.addEventListener("touchstart", unlock, { once: true, passive: true });
+    window.addEventListener("click", unlock, { once: true });
+    return () => {
+      window.removeEventListener("touchstart", unlock);
+      window.removeEventListener("click", unlock);
+    };
+  }, []);
+
   // ── Scroll: scrub video + track progress ──────────────────────────────────
   useEffect(() => {
     const video = videoRef.current;
     const container = containerRef.current;
     if (!video || !container) return;
 
-    // Ensure video is paused — a paused video seeks much faster
     video.pause();
 
     const onScroll = () => {
@@ -44,9 +60,7 @@ const VideoSection = () => {
       // Batch seek to next animation frame — prevents flooding the decoder
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = requestAnimationFrame(() => {
-        if (video.readyState >= 2) {
-          video.currentTime = targetTimeRef.current;
-        }
+        video.currentTime = targetTimeRef.current;
       });
     };
 
