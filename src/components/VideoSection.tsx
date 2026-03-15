@@ -12,9 +12,11 @@ const VideoSection = () => {
   const stickyRef     = useRef<HTMLDivElement>(null);
   const videoRef      = useRef<HTMLVideoElement>(null);
   const labelRefs     = useRef<(HTMLDivElement | null)[]>([]);
-  const maxOpacityRef = useRef(0);
-  const rafRef        = useRef<number | null>(null);
-  const targetTimeRef = useRef(0);
+  const maxOpacityRef  = useRef(0);
+  const rafRef         = useRef<number | null>(null);
+  const targetTimeRef  = useRef(0);
+  const lastSeekRef    = useRef(0); // timestamp of last actual seek
+  const lastTimeRef    = useRef(0); // last video.currentTime we set
 
   const [progress, setProgress] = useState(0);
 
@@ -57,10 +59,17 @@ const VideoSection = () => {
         stickyRef.current.style.cursor = p >= 0.75 ? "zoom-in" : "default";
       }
 
-      // Batch seek to next animation frame — prevents flooding the decoder
+      // Throttle seeks: only seek if time changed by >40ms worth or 50ms passed
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = requestAnimationFrame(() => {
-        video.currentTime = targetTimeRef.current;
+        const now = performance.now();
+        const timeDelta = Math.abs(targetTimeRef.current - lastTimeRef.current);
+        const elapsed = now - lastSeekRef.current;
+        if (timeDelta > 0.04 || elapsed > 50) {
+          video.currentTime = targetTimeRef.current;
+          lastTimeRef.current = targetTimeRef.current;
+          lastSeekRef.current = now;
+        }
       });
     };
 
