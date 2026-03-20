@@ -1,5 +1,40 @@
 import { useEffect, useRef, useState } from "react";
 
+/** Returns 0-1 for a fade-in / hold / fade-out envelope */
+function phaseOpacity(
+  progress: number,
+  fadeIn: number,
+  holdStart: number,
+  holdEnd: number,
+  fadeOut: number
+): number {
+  if (progress < fadeIn || progress > fadeOut) return 0;
+  if (progress < holdStart) return (progress - fadeIn) / (holdStart - fadeIn);
+  if (progress <= holdEnd) return 1;
+  return 1 - (progress - holdEnd) / (fadeOut - holdEnd);
+}
+
+function phaseTranslateY(
+  progress: number,
+  fadeIn: number,
+  holdStart: number,
+  holdEnd: number,
+  fadeOut: number
+): number {
+  if (progress < fadeIn || progress > fadeOut) return 20;
+  if (progress < holdStart) return 20 * (1 - (progress - fadeIn) / (holdStart - fadeIn));
+  if (progress <= holdEnd) return 0;
+  return -20 * ((progress - holdEnd) / (fadeOut - holdEnd));
+}
+
+const PHASES = [
+  { id: "role1",    fadeIn: 0.02, holdStart: 0.06, holdEnd: 0.11, fadeOut: 0.15 },
+  { id: "value",    fadeIn: 0.18, holdStart: 0.22, holdEnd: 0.28, fadeOut: 0.32 },
+  { id: "role2",    fadeIn: 0.35, holdStart: 0.39, holdEnd: 0.46, fadeOut: 0.50 },
+  { id: "tech",     fadeIn: 0.52, holdStart: 0.56, holdEnd: 0.61, fadeOut: 0.65 },
+  { id: "role3",    fadeIn: 0.67, holdStart: 0.70, holdEnd: 0.73, fadeOut: 0.75 },
+] as const;
+
 const LABELS = [
   { text: "Full-Stack AI Developer", top: "20%", left: "17%" },
   { text: "AI Automation Specialist",  top: "46%", right: "15%" },
@@ -155,6 +190,120 @@ const VideoSection = () => {
             {label.text}
           </div>
         ))}
+
+        {/* ── Scroll-synced text overlays ─────────────────────────────── */}
+
+        {/* Phase 1: Full-Stack AI Developer */}
+        <div
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+          style={{
+            opacity: phaseOpacity(progress, PHASES[0].fadeIn, PHASES[0].holdStart, PHASES[0].holdEnd, PHASES[0].fadeOut),
+            transform: `translateY(${phaseTranslateY(progress, PHASES[0].fadeIn, PHASES[0].holdStart, PHASES[0].holdEnd, PHASES[0].fadeOut)}px)`,
+            willChange: "opacity, transform",
+          }}
+        >
+          <span style={{
+            fontFamily: "'Fredoka One', cursive",
+            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
+            color: "#ffffff",
+            letterSpacing: "0.08em",
+            textShadow: "0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)",
+            textAlign: "center",
+          }}>
+            Full-Stack AI Developer
+          </span>
+        </div>
+
+        {/* Phase 2: Value proposition */}
+        <div
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+          style={{
+            opacity: phaseOpacity(progress, PHASES[1].fadeIn, PHASES[1].holdStart, PHASES[1].holdEnd, PHASES[1].fadeOut),
+            transform: `translateY(${phaseTranslateY(progress, PHASES[1].fadeIn, PHASES[1].holdStart, PHASES[1].holdEnd, PHASES[1].fadeOut)}px)`,
+            willChange: "opacity, transform",
+          }}
+        >
+          <div style={{
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 300,
+            fontSize: "clamp(1.2rem, 3vw, 2.4rem)",
+            color: "rgba(255,255,255,0.9)",
+            textShadow: "0 1px 10px rgba(0,0,0,0.4)",
+            textAlign: "center",
+            lineHeight: 1.4,
+          }}>
+            <div>I build AI systems that</div>
+            <div>turn hours into seconds.</div>
+          </div>
+        </div>
+
+        {/* Phase 3: AI Automation Specialist */}
+        <div
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+          style={{
+            opacity: phaseOpacity(progress, PHASES[2].fadeIn, PHASES[2].holdStart, PHASES[2].holdEnd, PHASES[2].fadeOut),
+            transform: `translateY(${phaseTranslateY(progress, PHASES[2].fadeIn, PHASES[2].holdStart, PHASES[2].holdEnd, PHASES[2].fadeOut)}px)`,
+            willChange: "opacity, transform",
+          }}
+        >
+          <span style={{
+            fontFamily: "'Fredoka One', cursive",
+            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
+            color: "#ffffff",
+            letterSpacing: "0.08em",
+            textShadow: "0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)",
+            textAlign: "center",
+          }}>
+            AI Automation Specialist
+          </span>
+        </div>
+
+        {/* Phase 4: Tech stack */}
+        <div
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+          style={{
+            opacity: phaseOpacity(progress, PHASES[3].fadeIn, PHASES[3].holdStart, PHASES[3].holdEnd, PHASES[3].fadeOut),
+            transform: `scale(${0.95 + 0.05 * phaseOpacity(progress, PHASES[3].fadeIn, PHASES[3].holdStart, PHASES[3].holdEnd, PHASES[3].fadeOut)})`,
+            willChange: "opacity, transform",
+          }}
+        >
+          <div className="flex flex-col items-center gap-3">
+            <div style={{ width: "clamp(120px, 30vw, 300px)", height: "1px", background: "rgba(255,255,255,0.15)" }} />
+            <span style={{
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 500,
+              fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)",
+              color: "rgba(255,255,255,0.7)",
+              letterSpacing: "0.12em",
+              textAlign: "center",
+              textShadow: "0 1px 10px rgba(0,0,0,0.4)",
+            }}>
+              n8n &middot; Zapier &middot; Make &middot; Python &middot; OpenAI &middot; Supabase
+            </span>
+            <div style={{ width: "clamp(120px, 30vw, 300px)", height: "1px", background: "rgba(255,255,255,0.15)" }} />
+          </div>
+        </div>
+
+        {/* Phase 5: AI/ML Developer */}
+        <div
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+          style={{
+            opacity: phaseOpacity(progress, PHASES[4].fadeIn, PHASES[4].holdStart, PHASES[4].holdEnd, PHASES[4].fadeOut),
+            transform: `translateY(${phaseTranslateY(progress, PHASES[4].fadeIn, PHASES[4].holdStart, PHASES[4].holdEnd, PHASES[4].fadeOut)}px)`,
+            willChange: "opacity, transform",
+          }}
+        >
+          <span style={{
+            fontFamily: "'Fredoka One', cursive",
+            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
+            color: "#ffffff",
+            letterSpacing: "0.08em",
+            textShadow: "0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)",
+            textAlign: "center",
+          }}>
+            AI/ML Developer
+          </span>
+        </div>
 
         {/* Vignette */}
         <div className="absolute inset-0 z-20 pointer-events-none"
