@@ -209,6 +209,7 @@ const VideoSection = () => {
               color: "#ffffff",
               letterSpacing: "0.08em",
               textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+              lineHeight: 1.1,
               marginBottom: "0.75rem",
             }}>
               Full-Stack AI Developer
@@ -243,6 +244,7 @@ const VideoSection = () => {
               color: "#ffffff",
               letterSpacing: "0.08em",
               textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+              lineHeight: 1.1,
               marginBottom: "0.75rem",
             }}>
               AI Automation Specialist
@@ -277,6 +279,7 @@ const VideoSection = () => {
               color: "#ffffff",
               letterSpacing: "0.08em",
               textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+              lineHeight: 1.1,
               marginBottom: "0.75rem",
             }}>
               ML Developer
