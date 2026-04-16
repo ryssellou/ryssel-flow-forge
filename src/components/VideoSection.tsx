@@ -30,10 +30,9 @@ function phaseDirection(
 }
 
 const PHASES = [
-  { id: "role1",  fadeIn: 0.02, holdStart: 0.07, holdEnd: 0.13, fadeOut: 0.18 },
-  { id: "value1", fadeIn: 0.20, holdStart: 0.25, holdEnd: 0.32, fadeOut: 0.37 },
-  { id: "role2",  fadeIn: 0.39, holdStart: 0.44, holdEnd: 0.51, fadeOut: 0.56 },
-  { id: "value2", fadeIn: 0.58, holdStart: 0.63, holdEnd: 0.68, fadeOut: 0.73 },
+  { id: "role1", fadeIn: 0.02, holdStart: 0.07, holdEnd: 0.18, fadeOut: 0.23 },
+  { id: "role2", fadeIn: 0.28, holdStart: 0.33, holdEnd: 0.48, fadeOut: 0.53 },
+  { id: "role3", fadeIn: 0.58, holdStart: 0.63, holdEnd: 0.72, fadeOut: 0.76 },
 ] as const;
 
 const LABELS = [
@@ -194,94 +193,107 @@ const VideoSection = () => {
 
         {/* ── Scroll-synced text overlays ─────────────────────────────── */}
 
-        {/* Phase 1: Full-Stack AI Developer — slides from LEFT */}
+        {/* Phase 1: Full-Stack AI Developer — enters from LEFT */}
         <div
-          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none px-6"
           style={{
             opacity: phaseOpacity(progress, PHASES[0].fadeIn, PHASES[0].holdStart, PHASES[0].holdEnd, PHASES[0].fadeOut),
-            transform: `translateX(${phaseDirection(progress, PHASES[0].fadeIn, PHASES[0].holdStart, PHASES[0].holdEnd, PHASES[0].fadeOut) * -60}px)`,
+            transform: `translateX(${phaseDirection(progress, PHASES[0].fadeIn, PHASES[0].holdStart, PHASES[0].holdEnd, PHASES[0].fadeOut) * -70}px)`,
             willChange: "opacity, transform",
           }}
         >
-          <span style={{
-            fontFamily: "'Fredoka One', cursive",
-            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
-            color: "#ffffff",
-            letterSpacing: "0.08em",
-            textShadow: "0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)",
-            textAlign: "center",
-          }}>
-            Full-Stack AI Developer
-          </span>
-        </div>
-
-        {/* Phase 2: Value — slides from RIGHT */}
-        <div
-          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
-          style={{
-            opacity: phaseOpacity(progress, PHASES[1].fadeIn, PHASES[1].holdStart, PHASES[1].holdEnd, PHASES[1].fadeOut),
-            transform: `translateX(${phaseDirection(progress, PHASES[1].fadeIn, PHASES[1].holdStart, PHASES[1].holdEnd, PHASES[1].fadeOut) * 60}px)`,
-            willChange: "opacity, transform",
-          }}
-        >
-          <div style={{
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 300,
-            fontSize: "clamp(1.2rem, 3vw, 2.4rem)",
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 1px 10px rgba(0,0,0,0.4)",
-            textAlign: "center",
-            lineHeight: 1.5,
-          }}>
-            <div>I turn complex problems</div>
-            <div>into <span style={{ fontWeight: 600, color: "#ffffff" }}>intelligent solutions.</span></div>
+          <div style={{ textAlign: "center", maxWidth: "680px" }}>
+            <div style={{
+              fontFamily: "'Fredoka One', cursive",
+              fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
+              color: "#ffffff",
+              letterSpacing: "0.08em",
+              textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+              marginBottom: "0.75rem",
+            }}>
+              Full-Stack AI Developer
+            </div>
+            <div style={{
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 300,
+              fontSize: "clamp(0.9rem, 1.6vw, 1.15rem)",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.7,
+              letterSpacing: "0.02em",
+            }}>
+              Building end-to-end AI-powered applications — intuitive interfaces,<br />
+              intelligent backends, and seamless integrations that scale with your business.
+            </div>
           </div>
         </div>
 
-        {/* Phase 3: AI Automation Specialist — rises from BOTTOM */}
+        {/* Phase 2: AI Automation Specialist — enters from RIGHT */}
         <div
-          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none px-6"
           style={{
-            opacity: phaseOpacity(progress, PHASES[2].fadeIn, PHASES[2].holdStart, PHASES[2].holdEnd, PHASES[2].fadeOut),
-            transform: `translateY(${phaseDirection(progress, PHASES[2].fadeIn, PHASES[2].holdStart, PHASES[2].holdEnd, PHASES[2].fadeOut) * -40}px)`,
+            opacity: phaseOpacity(progress, PHASES[1].fadeIn, PHASES[1].holdStart, PHASES[1].holdEnd, PHASES[1].fadeOut),
+            transform: `translateX(${phaseDirection(progress, PHASES[1].fadeIn, PHASES[1].holdStart, PHASES[1].holdEnd, PHASES[1].fadeOut) * 70}px)`,
             willChange: "opacity, transform",
           }}
         >
-          <span style={{
-            fontFamily: "'Fredoka One', cursive",
-            fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
-            color: "#ffffff",
-            letterSpacing: "0.08em",
-            textShadow: "0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)",
-            textAlign: "center",
-          }}>
-            AI Automation Specialist
-          </span>
+          <div style={{ textAlign: "center", maxWidth: "680px" }}>
+            <div style={{
+              fontFamily: "'Fredoka One', cursive",
+              fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
+              color: "#ffffff",
+              letterSpacing: "0.08em",
+              textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+              marginBottom: "0.75rem",
+            }}>
+              AI Automation Specialist
+            </div>
+            <div style={{
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 300,
+              fontSize: "clamp(0.9rem, 1.6vw, 1.15rem)",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.7,
+              letterSpacing: "0.02em",
+            }}>
+              Designing smart pipelines that eliminate manual work, cut operational costs,<br />
+              and give your team back hours they never knew they were losing.
+            </div>
+          </div>
         </div>
 
-        {/* Phase 4: AI/ML Developer — scale zoom in */}
-        {(() => {
-          const d = phaseDirection(progress, PHASES[3].fadeIn, PHASES[3].holdStart, PHASES[3].holdEnd, PHASES[3].fadeOut);
-          const op = phaseOpacity(progress, PHASES[3].fadeIn, PHASES[3].holdStart, PHASES[3].holdEnd, PHASES[3].fadeOut);
-          const scale = d < 0 ? 0.85 + 0.15 * (1 + d) : 1 + 0.15 * d;
-          return (
-            <div
-              className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
-              style={{ opacity: op, transform: `scale(${scale})`, willChange: "opacity, transform" }}
-            >
-              <span style={{
-                fontFamily: "'Fredoka One', cursive",
-                fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
-                color: "#ffffff",
-                letterSpacing: "0.08em",
-                textShadow: "0 2px 20px rgba(0,0,0,0.5), 0 4px 40px rgba(0,0,0,0.3)",
-                textAlign: "center",
-              }}>
-                AI/ML Developer
-              </span>
+        {/* Phase 3: ML Developer — rises from BOTTOM */}
+        <div
+          className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none px-6"
+          style={{
+            opacity: phaseOpacity(progress, PHASES[2].fadeIn, PHASES[2].holdStart, PHASES[2].holdEnd, PHASES[2].fadeOut),
+            transform: `translateY(${phaseDirection(progress, PHASES[2].fadeIn, PHASES[2].holdStart, PHASES[2].holdEnd, PHASES[2].fadeOut) * 50}px)`,
+            willChange: "opacity, transform",
+          }}
+        >
+          <div style={{ textAlign: "center", maxWidth: "680px" }}>
+            <div style={{
+              fontFamily: "'Fredoka One', cursive",
+              fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
+              color: "#ffffff",
+              letterSpacing: "0.08em",
+              textShadow: "0 2px 24px rgba(0,0,0,0.6)",
+              marginBottom: "0.75rem",
+            }}>
+              ML Developer
             </div>
-          );
-        })()}
+            <div style={{
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 300,
+              fontSize: "clamp(0.9rem, 1.6vw, 1.15rem)",
+              color: "rgba(255,255,255,0.65)",
+              lineHeight: 1.7,
+              letterSpacing: "0.02em",
+            }}>
+              Fine-tuning language models, building ML pipelines, and shipping<br />
+              intelligent systems that learn, adapt, and improve over time.
+            </div>
+          </div>
+        </div>
 
         {/* Vignette */}
         <div className="absolute inset-0 z-20 pointer-events-none"
